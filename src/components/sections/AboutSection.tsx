@@ -1,36 +1,94 @@
-import { MapPin, Target, Zap } from 'lucide-react'
+import {
+  Bot,
+  BrainCircuit,
+  CircuitBoard,
+  ScanEye,
+} from 'lucide-react'
+import type { ReactNode } from 'react'
 import { portfolio } from '@/data/portfolio'
-import { SectionHeader } from '@/components/shared/SectionHeader'
+import type { AboutIcon } from '@/types/portfolio'
+
+const expertiseIcons: Record<AboutIcon, typeof BrainCircuit> = {
+  'agentic-ai': BrainCircuit,
+  'embodied-ai': Bot,
+  'computer-vision': ScanEye,
+  'robotics-autonomy': CircuitBoard,
+}
+
+const expertiseAccentClasses: Record<AboutIcon, string> = {
+  'agentic-ai': 'about-accent-violet',
+  'embodied-ai': 'about-accent-cyan',
+  'computer-vision': 'about-accent-blue',
+  'robotics-autonomy': 'about-accent-teal',
+}
+
+function renderAboutParagraph(paragraph: string) {
+  const importantTerms = [
+    'University of Moratuwa',
+    'Artificial Intelligence',
+    'Agentic AI',
+    'Embodied AI',
+  ]
+  const matches = importantTerms
+    .map((term) => ({ term, index: paragraph.indexOf(term) }))
+    .filter((match) => match.index >= 0)
+    .sort((first, second) => first.index - second.index)
+
+  if (!matches.length) {
+    return paragraph
+  }
+
+  const parts: ReactNode[] = []
+  let cursor = 0
+
+  matches.forEach(({ term, index }) => {
+    if (index > cursor) {
+      parts.push(paragraph.slice(cursor, index))
+    }
+
+    parts.push(
+      <span className="about-term" key={term}>
+        {term}
+      </span>,
+    )
+    cursor = index + term.length
+  })
+
+  if (cursor < paragraph.length) {
+    parts.push(paragraph.slice(cursor))
+  }
+
+  return parts
+}
 
 export function AboutSection() {
-  const facts = [
-    { icon: MapPin, label: 'Location', value: portfolio.location },
-    { icon: Target, label: 'Focus', value: 'Full-stack product thinking' },
-    { icon: Zap, label: 'Availability', value: 'Internship and freelance ready' },
-  ]
+  const { about } = portfolio
 
   return (
     <section id="about" className="section container" aria-labelledby="about-title">
-      <SectionHeader
-        eyebrow="About"
-        title="A clear story, ready for your real details."
-        description="This section is intentionally structured so you can replace placeholders without redesigning the page."
-      />
-      <div className="about-grid">
+      <header className="about-header" data-reveal>
+        <h2 id="about-title">{about.heading}</h2>
+        <p>{about.subtitle}</p>
+      </header>
+      <div className="about-grid about-main-grid">
         <div className="surface-card about-copy" data-reveal>
-          <h3 id="about-title">Developer profile</h3>
-          {portfolio.about.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+          {about.paragraphs.map((paragraph) => (
+            <p key={paragraph}>{renderAboutParagraph(paragraph)}</p>
           ))}
         </div>
-        <div className="fact-grid" data-reveal>
-          {facts.map((fact) => {
-            const Icon = fact.icon
+        <div className="about-expertise-grid" data-reveal>
+          {about.expertise.map((item) => {
+            const Icon = expertiseIcons[item.icon]
             return (
-              <article className="surface-card fact-card" key={fact.label}>
-                <Icon aria-hidden="true" size={20} />
-                <span>{fact.label}</span>
-                <strong>{fact.value}</strong>
+              <article
+                className={`surface-card about-expertise-card ${expertiseAccentClasses[item.icon]}`}
+                key={item.title}
+              >
+                <span className="about-icon-shell">
+                  <Icon aria-hidden="true" size={21} />
+                </span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </article>
             )
           })}

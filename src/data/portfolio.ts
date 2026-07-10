@@ -59,11 +59,36 @@ export const portfolio: PortfolioData = {
   headline: 'I build intelligent AI and robotic systems that can perceive, reason, and act.',
   introduction:
     'Focused on Robotics, Embodied AI, Agentic AI, computer vision, multi-agent systems and Autonomous Systems.',
-  about: [
-    'I am an Electronic and Telecommunication Engineering undergraduate interested in intelligent systems that connect AI, robotics, and real-world autonomy.',
-    'My work focuses on robotics, embedded systems, computer vision, large language models, and multi-agent systems.',
-    'I enjoy building practical systems that combine perception, reasoning, and control, especially for autonomous and embodied AI applications.',
-  ],
+  about: {
+    heading: 'About Me',
+    subtitle: 'Building intelligent systems that connect AI, robotics, and autonomous decision-making.',
+    paragraphs: [
+      'I am an Electronic and Telecommunication Engineering undergraduate at the University of Moratuwa, Sri Lanka, focused on Artificial Intelligence, robotics, Agentic AI, and Embodied AI.',
+      'I enjoy building intelligent systems that combine perception, reasoning, navigation, and autonomous action in real-world and simulated environments.',
+    ],
+    expertise: [
+      {
+        title: 'Agentic AI',
+        description: 'Tool-using agents, LLM workflows, planning, and autonomous decision-making.',
+        icon: 'agentic-ai',
+      },
+      {
+        title: 'Embodied AI',
+        description: 'Intelligent systems that perceive, reason, navigate, and act.',
+        icon: 'embodied-ai',
+      },
+      {
+        title: 'Computer Vision',
+        description: 'Visual perception, object understanding, scene interpretation, and robotic awareness.',
+        icon: 'computer-vision',
+      },
+      {
+        title: 'Robotics & Autonomy',
+        description: 'ROS 2, SLAM, robot navigation, computer vision, and autonomous systems.',
+        icon: 'robotics-autonomy',
+      },
+    ],
+  },
   availability: 'Open to AI, robotics, research, and intelligent systems opportunities',
   location: 'Sri Lanka',
   email: 'sadaruwanijmj.22@uom.lk',

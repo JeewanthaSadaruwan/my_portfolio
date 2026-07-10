@@ -25,6 +25,25 @@ export interface HeroRole {
   image: ProjectImage
 }
 
+export type AboutIcon =
+  | 'agentic-ai'
+  | 'embodied-ai'
+  | 'computer-vision'
+  | 'robotics-autonomy'
+
+export interface AboutExpertise {
+  title: string
+  description: string
+  icon: AboutIcon
+}
+
+export interface AboutData {
+  heading: string
+  subtitle: string
+  paragraphs: string[]
+  expertise: AboutExpertise[]
+}
+
 export interface ExperienceItem {
   role: string
   organization: string
@@ -104,7 +123,7 @@ export interface PortfolioData {
   heroRoles: HeroRole[]
   headline: string
   introduction: string
-  about: string[]
+  about: AboutData
   availability: string
   location: string
   email: string
