@@ -73,13 +73,17 @@ Project case-study routes are generated from the slug:
 
 ## Replace Images
 
-The current project image is:
+Use `public/media/` for images referenced by URL strings in `src/data/portfolio.ts`, such as project screenshots, gallery images, and large background media.
+
+Use `src/assets/` for images or icons imported directly by React components.
+
+The shared placeholder is:
 
 ```text
-public/project-placeholder.svg
+public/media/placeholders/project-placeholder.svg
 ```
 
-Replace it with real screenshots or add new files under `public/` or `src/assets/`. Then update the `thumbnail` and `gallery` paths in `src/data/portfolio.ts`.
+See `ASSET_GUIDE.md` for the current folder map.
 
 The hero profile area is an intentional CSS placeholder. Replace it with a real image component when you add a professional photo.
 

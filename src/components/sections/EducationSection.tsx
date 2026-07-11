@@ -24,8 +24,12 @@ const educationImages = Object.fromEntries(
   }),
 )
 
+const educationImageAliases: Record<string, string> = {
+  'university-of-moratuwa': 'entc',
+}
+
 function EducationEntryCard({ item, index }: { item: EducationItem; index: number }) {
-  const imageUrl = educationImages[item.id]
+  const imageUrl = educationImages[item.id] ?? educationImages[educationImageAliases[item.id]]
   const imageStyle = imageUrl
     ? ({ '--education-image': `url("${imageUrl}")` } as CSSProperties)
     : undefined

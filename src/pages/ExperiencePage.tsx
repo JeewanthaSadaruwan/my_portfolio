@@ -1,5 +1,5 @@
-import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, X } from 'lucide-react'
-import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode } from 'react'
+import { ArrowLeft, ChevronLeft, ChevronRight, ExternalLink, Images, X } from 'lucide-react'
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ExperienceHeroCollage } from '@/components/experience/ExperienceHeroCollage'
 import { portfolio } from '@/data/portfolio'
@@ -26,6 +26,9 @@ function ExperienceImage({
   children,
 }: ExperienceImageProps) {
   const [failed, setFailed] = useState(false)
+  const figureStyle = image.width && image.height
+    ? ({ '--experience-media-aspect': `${image.width} / ${image.height}` } as CSSProperties)
+    : undefined
   const content = failed ? (
     <span className="experience-image-placeholder" role="img" aria-label={image.alt}>
       <span>Media unavailable</span>
@@ -44,7 +47,7 @@ function ExperienceImage({
 
   if (onClick) {
     return (
-      <figure className={className}>
+      <figure className={className} style={figureStyle}>
         <button className="experience-image-button" type="button" onClick={onClick}>
           {content}
           {children}
@@ -55,7 +58,7 @@ function ExperienceImage({
   }
 
   return (
-    <figure className={className}>
+    <figure className={className} style={figureStyle}>
       <div className="experience-image-static">{content}</div>
       <figcaption>
         {children}
@@ -112,10 +115,12 @@ export function ExperiencePage() {
 
   const heroCollageImages = useMemo(
     () =>
-      ['cover', 'navigation-test', 'isaac-sim-go2']
+      (experience?.slug === 'wso2-robotics-ai-intern'
+        ? ['wso2-hero-img-1', 'wso2-hero-img-2', 'wso2-hero-img-3']
+        : ['cover', 'navigation-test', 'isaac-sim-go2'])
         .map((id) => imageMedia.find((image) => image.id === id))
         .filter((image): image is ExperienceMediaImage => Boolean(image)),
-    [imageMedia],
+    [experience?.slug, imageMedia],
   )
 
   const activeImage = imageMedia[activeImageIndex]
@@ -236,8 +241,10 @@ export function ExperiencePage() {
       return null
     }
 
+    const imageCount = mediaItems.filter(isImage).length
+
     return (
-      <div className="experience-section-media">
+      <div className={`experience-section-media${imageCount >= 4 ? ' experience-section-media-grid' : ''}`}>
         {mediaItems.map((media) => {
           if (isVideo(media)) {
             return <ExperienceVideo key={media.id} video={media} />
@@ -247,7 +254,7 @@ export function ExperiencePage() {
             <ExperienceImage
               key={media.id}
               image={media}
-              className="experience-media-figure"
+              className={`experience-media-figure${media.id === 'embodied-agent-architecture' ? ' experience-media-figure-contain experience-media-figure-wide' : ''}${media.id === 'robotic-arm' ? ' experience-media-figure-contain experience-media-figure-portrait' : ''}`}
               width={1120}
               height={700}
               onClick={(event) => openLightbox(media, event.currentTarget)}
@@ -280,6 +287,15 @@ export function ExperiencePage() {
                 <span className="chip" key={technology}>{technology}</span>
               ))}
             </div>
+            <Link
+              className={`${buttonVariants({ variant: 'secondary' })} experience-card-action experience-gallery-cta`}
+              to={`/experience/${experience.slug}/gallery`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Gallery
+              <Images aria-hidden="true" size={18} />
+            </Link>
           </header>
         </div>
 
