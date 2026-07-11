@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Unitree Go2 EDU media placeholder</title>
+  <desc id="desc">Placeholder for future internship media showing the Unitree Go2 EDU robot.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#07101f"/>
+      <stop offset="0.55" stop-color="#10223c"/>
+      <stop offset="1" stop-color="#0f766e"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop stop-color="#5eead4"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g fill="none" stroke="#5eead4" stroke-opacity="0.18">
+    <path d="M80 560 C240 440 360 620 520 500 S840 420 1120 520"/>
+    <path d="M120 180 C300 260 420 120 620 220 S900 320 1080 180"/>
+  </g>
+  <g transform="translate(360 225)" fill="none" stroke="url(#line)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M110 210 h260 l70 -90 h-330 z"/>
+    <path d="M135 210 l-72 115"/>
+    <path d="M230 210 l-34 130"/>
+    <path d="M345 210 l34 130"/>
+    <path d="M455 120 l90 115"/>
+    <circle cx="170" cy="165" r="22"/>
+    <circle cx="355" cy="165" r="22"/>
+  </g>
+  <text x="80" y="612" fill="#eef4ff" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">Unitree Go2 EDU</text>
+  <text x="80" y="662" fill="#a8b4c3" font-family="Inter, Arial, sans-serif" font-size="24">TODO: replace with internship robot media</text>
+</svg>

@@ -4,9 +4,18 @@ import {
   CircuitBoard,
   ScanEye,
 } from 'lucide-react'
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import { portfolio } from '@/data/portfolio'
 import type { AboutIcon } from '@/types/portfolio'
+
+const aboutProfileImages = import.meta.glob('../../assets/images/about/uom.jpeg', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+}) as Record<string, string>
+
+// TODO(dev): Add src/assets/images/about/uom.jpeg to enable the optional biography-card photo layer.
+const aboutProfileImage = Object.values(aboutProfileImages)[0]
 
 const expertiseIcons: Record<AboutIcon, typeof BrainCircuit> = {
   'agentic-ai': BrainCircuit,
@@ -26,6 +35,7 @@ function renderAboutParagraph(paragraph: string) {
   const importantTerms = [
     'University of Moratuwa',
     'Artificial Intelligence',
+    'robotics',
     'Agentic AI',
     'Embodied AI',
   ]
@@ -63,6 +73,11 @@ function renderAboutParagraph(paragraph: string) {
 
 export function AboutSection() {
   const { about } = portfolio
+  const aboutCopyStyle = aboutProfileImage
+    ? ({
+        '--about-profile-image': `url("${aboutProfileImage}")`,
+      } as CSSProperties)
+    : undefined
 
   return (
     <section id="about" className="section container" aria-labelledby="about-title">
@@ -71,7 +86,11 @@ export function AboutSection() {
         <p>{about.subtitle}</p>
       </header>
       <div className="about-grid about-main-grid">
-        <div className="surface-card about-copy" data-reveal>
+        <div
+          className={`surface-card about-copy${aboutProfileImage ? ' has-about-profile-image' : ''}`}
+          data-reveal
+          style={aboutCopyStyle}
+        >
           {about.paragraphs.map((paragraph) => (
             <p key={paragraph}>{renderAboutParagraph(paragraph)}</p>
           ))}

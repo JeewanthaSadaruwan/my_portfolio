@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">SLAM navigation media placeholder</title>
+  <desc id="desc">Placeholder for future internship media showing SLAM, mapping, and navigation validation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#07101f"/>
+      <stop offset="0.6" stop-color="#111c33"/>
+      <stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g stroke="#60a5fa" stroke-opacity="0.24" fill="none">
+    <path d="M100 160 H500 V330 H760 V520 H1100"/>
+    <path d="M160 520 H420 V390 H660 V190 H1040"/>
+    <circle cx="500" cy="330" r="34"/>
+    <circle cx="760" cy="520" r="34"/>
+    <circle cx="660" cy="190" r="34"/>
+  </g>
+  <g transform="translate(520 285)">
+    <circle cx="80" cy="80" r="74" fill="none" stroke="#5eead4" stroke-width="14"/>
+    <path d="M80 32 v48 l38 30" fill="none" stroke="#eef4ff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="80" y="612" fill="#eef4ff" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800">SLAM & Navigation</text>
+  <text x="80" y="662" fill="#a8b4c3" font-family="Inter, Arial, sans-serif" font-size="24">TODO: replace with mapping and validation media</text>
+</svg>

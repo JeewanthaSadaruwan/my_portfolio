@@ -64,7 +64,7 @@ export const portfolio: PortfolioData = {
     subtitle: 'Building intelligent systems that connect AI, robotics, and autonomous decision-making.',
     paragraphs: [
       'I am an Electronic and Telecommunication Engineering undergraduate at the University of Moratuwa, Sri Lanka, focused on Artificial Intelligence, robotics, Agentic AI, and Embodied AI.',
-      'I enjoy building intelligent systems that combine perception, reasoning, navigation, and autonomous action in real-world and simulated environments.',
+      'I enjoy building intelligent systems that combine perception, reasoning, navigation, and autonomous action in real-world and simulated environments, with a strong interest in practical robotic applications, research-driven engineering, and systems that can interact meaningfully with their surroundings.',
     ],
     expertise: [
       {
@@ -113,68 +113,28 @@ export const portfolio: PortfolioData = {
   ],
   skills: [
     {
-      title: 'Robotics & Autonomy',
-      items: [
-        'ROS 2',
-        'SLAM',
-        'Navigation',
-        'Gazebo',
-        'Webots',
-        'Autonomous mobile robots',
-        'Multi-agent systems',
-      ],
+      title: 'AI & Machine Learning Frameworks',
+      items: ['OpenCV', 'PyTorch', 'scikit-learn', 'TensorFlow', 'Ultralytics YOLO'],
     },
     {
-      title: 'Embedded Systems',
-      items: [
-        'STM32',
-        'ESP32',
-        'Raspberry Pi',
-        'Jetson Nano',
-        'Sensor integration',
-        'Motor control',
-        'Bare-metal programming',
-      ],
+      title: 'Generative & Agentic AI',
+      items: ['Hugging Face', 'LangChain', 'LangGraph', 'ChromaDB', 'PostgreSQL', 'Strands Agents'],
     },
     {
-      title: 'AI, ML & Vision',
-      items: [
-        'Machine learning',
-        'Computer vision',
-        'OpenCV',
-        'PCA',
-        'Classification',
-        'TinyML',
-        'Vision-Language Models',
-      ],
+      title: 'Robotic Development & Simulators',
+      items: ['ROS 2', 'Gazebo', 'Webots', 'Habitat-Sim', 'Isaac Sim', 'MuJoCo'],
     },
     {
       title: 'Programming Languages',
       items: ['Python', 'C', 'C++', 'MATLAB'],
     },
     {
-      title: 'Engineering Tools',
-      items: [
-        'Altium Designer',
-        'SolidWorks',
-        'Multisim',
-        'LTspice',
-        'Simulink',
-        'Quartus Prime',
-        'Git',
-        'GitHub',
-      ],
+      title: 'Electronics & PCB Design Tools',
+      items: ['Altium Designer', 'LTspice', 'NI Multisim'],
     },
     {
-      title: 'Professional Skills',
-      items: [
-        'Leadership',
-        'Project management',
-        'Critical thinking',
-        'Problem solving',
-        'Team collaboration',
-        'Technical communication',
-      ],
+      title: 'Embedded Platforms',
+      items: ['STM32', 'ESP32', 'Raspberry Pi', 'NVIDIA Jetson'],
     },
   ],
   technologies: [
@@ -195,25 +155,370 @@ export const portfolio: PortfolioData = {
   ],
   experience: [
     {
+      slug: 'wso2-robotics-ai-intern',
       role: 'Robotics & AI Intern',
       organization: 'WSO2 Lanka (Pvt) Ltd',
       location: 'Sri Lanka',
-      startDate: 'Nov 2025',
-      endDate: 'Present',
+      startDate: '2025-11-24',
+      endDate: '2026-05-11',
+      dateLabel: '24 November 2025 – 11 May 2026',
+      projectTitle: 'Unitree Go2 Robotics, Autonomous Navigation & Intelligent Agent Integration',
+      summary:
+        'Worked across autonomous navigation, embodied-agent development, robotic manipulation, intelligent-agent systems, and cloud-based robotics simulation.',
       description:
-        'Working on autonomy and intelligent behavior for the Unitree Go2 EDU quadruped robot, with a focus on SLAM, indoor navigation, and multi-agent integration.',
-      achievements: [
-        'Integrated a SLAM-based autonomy pipeline for indoor mapping and navigation on the Unitree Go2 EDU platform.',
-        'Validated localization and repeatable goal execution across multiple indoor floors.',
-        'Integrating RobotecAI RAI for agent-based orchestration and higher-level behavior execution.',
+        'A six-month engineering journey across physical robotics, autonomous navigation, intelligent agents, perception, observability, and cloud-based simulation.',
+      projectIntroduction: [
+        'The internship progressed from understanding the Unitree Go2 platform and ROS-based development workflow to building and testing connected robotics and artificial-intelligence systems.',
+        'The work covered indoor mapping and autonomous navigation, robotic manipulation, tool-using agents, voice and perception integration, agent observability, and cloud-based robot simulation. It demonstrated that an intelligent robotic system depends on the integration of hardware, sensing, localization, planning, control, perception, software services, agent reasoning, monitoring, and safety.',
       ],
-      technologies: [
-        'Unitree Go2 EDU',
+      achievements: [
+        'Built and refined a SLAM-based mapping, localization, and autonomous navigation workflow for the Unitree Go2.',
+        'Connected voice interaction, movement, navigation, camera perception, and basic human recognition to an embodied robotic agent.',
+        'Configured Isaac Sim and Isaac Lab environments for Unitree Go2 simulation, walking-policy testing, and teleoperation.',
+      ],
+      responsibilitiesIntro:
+        'My internship work is centered on practical robot integration, indoor autonomy testing, and clear documentation of implementation behaviour.',
+      responsibilities: [
+        'Integrating autonomy components for indoor mapping, localization, and navigation.',
+        'Configuring the Unitree Go2 EDU platform for goal-based indoor navigation.',
+        'Testing localization and navigation behaviour in practical indoor environments.',
+        'Evaluating repeatable goal execution across multiple floors.',
+        'Supporting the integration of RobotecAI RAI above the existing navigation stack.',
+        'Documenting implementation decisions, test behaviour, and ongoing technical work.',
+      ],
+      technicalOverview: [
+        'The autonomy pipeline is built around ROS 2 and connects the Unitree Go2 EDU platform with mapping, localization, and navigation components.',
+        'The robot first creates or loads an indoor map, estimates its position within that map, and then executes navigation goals while responding to the environment.',
+        'The ongoing RobotecAI RAI integration adds a higher-level orchestration layer intended to coordinate agent decisions and robotic behaviour.',
+      ],
+      technicalImplementation: [
+        'Built around the Unitree Go2 EDU platform with ROS 2-based robotics integration.',
+        'Integrated a SLAM-based autonomy pipeline for indoor mapping and navigation workflows.',
+        'Connected navigation behavior with higher-level orchestration work while keeping RobotecAI RAI integration clearly ongoing.',
+      ],
+      architectureSteps: [
+        'Unitree Go2 EDU Hardware',
+        'ROS 2 Integration',
+        'SLAM and Localization',
+        'Navigation and Goal Execution',
+        'RobotecAI RAI Orchestration — Ongoing',
+      ],
+      contributions: [
+        {
+          title: 'SLAM-Based Mapping',
+          description:
+            'Integrated the mapping workflow required to create and use indoor environment maps with the Unitree Go2 EDU platform.',
+        },
+        {
+          title: 'Localization and Navigation',
+          description:
+            'Configured and tested localization, navigation, and repeatable goal execution in indoor environments.',
+        },
+        {
+          title: 'Practical Validation',
+          description:
+            'Validated robot behaviour across multiple indoor floors and observed localization stability during repeated navigation tests.',
+        },
+        {
+          title: 'Multi-Agent Integration',
+          description:
+            'Working on integrating RobotecAI RAI for agent-based orchestration and higher-level behaviour execution.',
+          ongoing: true,
+        },
+      ],
+      challenges: [
+        'Adapting a mobile-robot navigation workflow to a quadruped platform.',
+        'Maintaining reliable localization in changing indoor environments.',
+        'Testing behaviour across different floors and physical layouts.',
+        'Connecting low-level navigation capabilities with higher-level agent orchestration.',
+        'Understanding the relationship between robot hardware, autonomy software, and intelligent decision systems.',
+      ],
+      validationIntro:
+        'The autonomy pipeline was tested through practical indoor mapping and navigation scenarios. Validation focused on localization behaviour, repeatable goal execution, and operation across multiple indoor floors.',
+      validationOutcomes: [
+        'Developed a practical SLAM, localization, and navigation workflow for the Unitree Go2',
+        'Gained hands-on experience with robotic-arm manipulation and inverse kinematics',
+        'Built a complete tool-using agent application',
+        'Connected intelligent-agent capabilities with physical robot actions',
+        'Gained experience with agent traces, evaluation, and safety controls',
+        'Configured cloud-based simulation for quadruped locomotion and teleoperation',
+      ],
+      ongoingWork: [
+        'The current phase focuses on integrating RobotecAI RAI with the robotics stack to support agent-based orchestration and higher-level behaviour execution.',
+        'This work explores how intelligent agents can coordinate navigation tasks while remaining connected to the underlying robot state and autonomy pipeline.',
+      ],
+      summaryTechnologies: [
+        'Unitree Go2',
         'ROS 2',
         'SLAM',
-        'Navigation',
-        'RobotecAI RAI',
-        'Multi-agent systems',
+        'Agentic AI',
+        'Embodied AI',
+        'Isaac Sim',
+      ],
+      technologies: [
+        'Unitree Go2',
+        'D1-T Robotic Arm',
+        'ROS 2',
+        'SLAM Toolbox',
+        'Python',
+        'Agentic AI',
+        'Computer Vision',
+        'Google Cloud',
+        'Docker',
+        'CUDA',
+        'Isaac Sim',
+        'Isaac Lab',
+      ],
+      galleryIntro:
+        'Selected images from robot integration, mapping, navigation testing, and ongoing multi-agent development.',
+      images: [
+        {
+          src: '/experience/wso2/cover.webp',
+          alt: 'Unitree Go2 robotics internship cover media',
+          caption: 'Selected public media from the Unitree Go2 robotics internship work.',
+        },
+        {
+          src: '/experience/wso2/slam-comparison.webp',
+          alt: 'Initial and improved SLAM map comparison for Unitree Go2 indoor mapping',
+          caption: 'Comparison between early mapping output and a more usable refined map.',
+        },
+        {
+          src: '/experience/wso2/navigation-test.webp',
+          alt: 'Navigation path planning test for the Unitree Go2 robot',
+          caption: 'Navigation and path-planning test media from the indoor autonomy workflow.',
+        },
+        {
+          src: '/experience/wso2/embodied-agent-architecture.webp',
+          alt: 'Embodied agent workflow architecture connected to Unitree Go2 tools and perception',
+          caption: 'Embodied-agent workflow connecting voice, tools, robot motion, navigation, and perception.',
+        },
+        {
+          src: '/experience/wso2/isaac-sim-go2.webp',
+          alt: 'Unitree Go2 robot loaded in Isaac Sim cloud simulation',
+          caption: 'Unitree Go2 simulation setup inside Isaac Sim.',
+        },
+        {
+          src: '/experience/wso2/robotic-arm.webp',
+          alt: 'D1-T robotic arm control and manipulation work',
+          caption: 'D1-T robotic-arm setup for calibration, movement testing, and manipulation work.',
+        },
+      ],
+      detailIntroduction:
+        'A six-month engineering journey across physical robotics, autonomous navigation, intelligent agents, perception, observability, and cloud-based simulation.',
+      storySections: [
+        {
+          id: 'autonomous-navigation',
+          eyebrow: '01 — Autonomous Navigation',
+          heading: 'From indoor mapping to autonomous navigation',
+          paragraphs: [
+            'One of my primary responsibilities was developing a SLAM-based indoor navigation workflow for the Unitree Go2 quadruped robot. I configured the ROS workspace and SLAM components required to build maps, estimate the robot’s position, and support goal-based navigation.',
+            'The initial mapping experiments confirmed that the workflow was feasible, but they also revealed distorted areas, unclear environment boundaries, and occasional localization instability. I refined the configuration through repeated experiments, parameter adjustments, and comparisons between mapping outputs.',
+            'After producing a more usable map, I configured and tested autonomous navigation. The robot was required to localize itself, generate a path, and move toward selected goals within the mapped environment.',
+            'This work showed the practical relationship between map quality, localization, path planning, and motion execution. An inaccurate map or localization estimate directly affected the generated path and the robot’s behaviour.',
+          ],
+          highlights: [
+            'Configured SLAM-based indoor mapping on the Unitree Go2',
+            'Refined mapping parameters to improve map consistency',
+            'Tested localization across multiple indoor environments',
+            'Inspected generated navigation paths',
+            'Validated repeatable goal execution in tested scenarios',
+            'Prepared the navigation capability for later agent integration',
+          ],
+          mediaIds: ['slam-comparison', 'slam-demo-video'],
+        },
+        {
+          id: 'embodied-ai',
+          eyebrow: '02 — Embodied AI',
+          heading: 'Connecting an intelligent agent with a physical robot',
+          paragraphs: [
+            'The next stage connected an intelligent agent with the Unitree Go2 so that the robot could receive user instructions, select tools, perceive its environment, and perform physical actions.',
+            'I integrated voice-based interaction and exposed robot functions as agent tools. These tools supported movement, stopping, turning, navigation, image capture, and perception-related operations.',
+            'The earlier SLAM and navigation workflow was reused for location-based commands. The agent interpreted a requested destination and invoked the appropriate robot-navigation function.',
+            'I also connected the robot camera to the agent workflow and developed a basic human-recognition capability using predefined reference images.',
+            'The complete pipeline depended on several connected components. Audio latency, tool selection, robot response time, navigation stability, camera quality, and recognition performance all influenced the final interaction.',
+          ],
+          highlights: [
+            'Integrated voice interaction with the robotic agent',
+            'Exposed movement and navigation capabilities as tools',
+            'Connected location requests with autonomous navigation',
+            'Integrated camera-based perception',
+            'Implemented basic human recognition',
+            'Analysed agent traces and tool-call behaviour',
+            'Explored evaluation, AI Gateway configurations, and guardrails',
+          ],
+          mediaIds: ['embodied-agent-architecture'],
+          links: [
+            {
+              label: 'View Embodied Agent Repository',
+              href: 'https://github.com/Unitree-Go2-Physical-AI-Integration/Go2-Visitor-Assistant.git',
+            },
+          ],
+        },
+        {
+          id: 'cloud-robotics',
+          eyebrow: '03 — Cloud Robotics',
+          heading: 'Testing the Unitree Go2 in Isaac Sim',
+          paragraphs: [
+            'In the final stage, I configured a GPU-supported Google Cloud environment for robotics simulation using Isaac Sim and Isaac Lab.',
+            'The setup required troubleshooting CUDA, Docker, simulation packages, and environment dependencies. After validating rendering and robot loading, I integrated Unitree Go2-related repositories into the simulation workflow.',
+            'I tested an existing pre-trained walking policy rather than training a reinforcement-learning policy from the beginning. The experiments focused on robot stability, locomotion behaviour, and response to control commands.',
+            'I also explored keyboard teleoperation for forward motion, backward motion, turning, and stopping. This provided practical experience with simulation-based robot control and demonstrated how simulation can support testing before applying changes to physical hardware.',
+          ],
+          highlights: [
+            'Configured a GPU-supported cloud simulation environment',
+            'Set up Isaac Sim and Isaac Lab',
+            'Loaded and tested the Unitree Go2 model',
+            'Tested an existing pre-trained walking policy',
+            'Observed locomotion stability and behaviour',
+            'Implemented keyboard teleoperation',
+          ],
+          mediaIds: [],
+        },
+      ],
+      supportingWork: [
+        {
+          title: 'D1-T Robotic Arm',
+          description:
+            'I configured and calibrated the D1-T robotic arm, tested predefined movements, implemented a basic pick-and-place workflow, and explored inverse kinematics for reachable three-dimensional target positions.',
+          points: [
+            'Arm configuration and calibration',
+            'Pick-and-place workflow',
+            'Inverse-kinematics experiments',
+            'Physical and simulation-based testing',
+            'Workspace and safety considerations',
+          ],
+          mediaIds: ['robotic-arm', 'arm-demo-video'],
+          links: [
+            {
+              label: 'View Robotic Arm Repository',
+              href: 'https://github.com/JeewanthaSadaruwan/unitree-D1-550-Robot-ARM.git',
+            },
+          ],
+        },
+        {
+          title: 'Agent-Based Ride-Booking System',
+          description:
+            'I designed and implemented an agent-based ride-booking application containing a user interface, agent workflow, backend services, database, APIs, and map-related tools.',
+          points: [
+            'High-level and detailed system architecture',
+            'Tool-based request processing',
+            'Frontend and backend integration',
+            'Database and API communication',
+            'Map-tool integration',
+            'End-to-end testing',
+            'Prompt and decision-flow refinement',
+          ],
+          links: [
+            {
+              label: 'View Ride-Booking Agent Repository',
+              href: 'https://github.com/JeewanthaSadaruwan/Ride-Booking-Agent-.git',
+            },
+          ],
+        },
+      ],
+      outcomesIntro:
+        'Across the internship, the work progressed from platform familiarization to connected robotics and agentic-AI systems.',
+      learningParagraphs: [
+        'The strongest lesson was that modern robotics is an integration discipline. Mapping, localization, planning, movement, perception, agent reasoning, cloud infrastructure, observability, and safety must work together as one complete system.',
+        'The internship strengthened my ability to debug unfamiliar systems, learn independently, document implementation decisions, communicate technical progress, and approach open-ended engineering problems systematically.',
+      ],
+      learningTags: [
+        'Robotics Integration',
+        'SLAM & Navigation',
+        'Robotic Manipulation',
+        'Agentic AI',
+        'Embodied AI',
+        'Agent Observability',
+        'Cloud Simulation',
+        'Technical Communication',
+      ],
+      resources: [
+        {
+          label: 'Embodied Agent Repository',
+          href: 'https://github.com/Unitree-Go2-Physical-AI-Integration/Go2-Visitor-Assistant.git',
+        },
+        {
+          label: 'D1-T Robotic Arm Repository',
+          href: 'https://github.com/JeewanthaSadaruwan/unitree-D1-550-Robot-ARM.git',
+        },
+        {
+          label: 'Ride-Booking Agent Repository',
+          href: 'https://github.com/JeewanthaSadaruwan/Ride-Booking-Agent-.git',
+        },
+        {
+          label: 'SLAM Demonstration',
+          href: 'https://drive.google.com/file/d/1EEVsXk2TEE8i5LiguUBYnf9VosTrAj9s/view?usp=sharing',
+        },
+        {
+          label: 'Robotic Arm Demonstration',
+          href: 'https://drive.google.com/file/d/16fRzYCPWkogHTC1uZi42zMRHRKKKSSDg/view?usp=sharing',
+        },
+      ],
+      confidentialityNote:
+        'This page presents only public and non-confidential work. Internal systems, private repositories, credentials, dashboards, proprietary information, and unpublished company details are intentionally excluded.',
+      media: [
+        {
+          id: 'cover',
+          type: 'image',
+          src: '/experience/wso2/cover.webp',
+          alt: 'Unitree Go2 robotics internship cover media',
+          caption: 'Selected public media from the Unitree Go2 robotics internship work.',
+        },
+        {
+          id: 'slam-comparison',
+          type: 'image',
+          src: '/experience/wso2/slam-comparison.webp',
+          alt: 'Initial and improved SLAM map comparison for Unitree Go2 indoor mapping',
+          caption: 'Initial and improved SLAM map comparison from the indoor mapping workflow.',
+        },
+        {
+          id: 'navigation-test',
+          type: 'image',
+          src: '/experience/wso2/navigation-test.webp',
+          alt: 'Navigation path planning test for the Unitree Go2 robot',
+          caption: 'Navigation and path-planning test media from the indoor autonomy workflow.',
+        },
+        {
+          id: 'embodied-agent-architecture',
+          type: 'image',
+          src: '/experience/wso2/embodied-agent-architecture.webp',
+          alt: 'Embodied agent workflow architecture connected to Unitree Go2 tools and perception',
+          caption: 'Embodied-agent workflow connecting voice, tools, robot motion, navigation, and perception.',
+        },
+        {
+          id: 'isaac-sim-go2',
+          type: 'image',
+          src: '/experience/wso2/isaac-sim-go2.webp',
+          alt: 'Unitree Go2 robot loaded in Isaac Sim cloud simulation',
+          caption: 'Unitree Go2 simulation setup inside Isaac Sim.',
+        },
+        {
+          id: 'robotic-arm',
+          type: 'image',
+          src: '/experience/wso2/robotic-arm.webp',
+          alt: 'D1-T robotic arm control and manipulation work',
+          caption: 'D1-T robotic-arm setup for calibration, movement testing, and manipulation work.',
+        },
+        {
+          id: 'slam-demo-video',
+          type: 'video',
+          title: 'Unitree Go2 SLAM & Navigation Demonstration',
+          caption:
+            'Demonstration of indoor mapping, localization, path planning, and goal-based autonomous navigation using the Unitree Go2.',
+          embedUrl: 'https://drive.google.com/file/d/1EEVsXk2TEE8i5LiguUBYnf9VosTrAj9s/preview',
+          externalUrl: 'https://drive.google.com/file/d/1EEVsXk2TEE8i5LiguUBYnf9VosTrAj9s/view?usp=sharing',
+          poster: '/experience/wso2/slam-video-poster.webp',
+        },
+        {
+          id: 'arm-demo-video',
+          type: 'video',
+          title: 'D1-T Robotic Arm Pick-and-Place Demonstration',
+          caption:
+            'Demonstration of robotic-arm control, pick-and-place execution, and inverse-kinematics testing.',
+          embedUrl: 'https://drive.google.com/file/d/16fRzYCPWkogHTC1uZi42zMRHRKKKSSDg/preview',
+          externalUrl: 'https://drive.google.com/file/d/16fRzYCPWkogHTC1uZi42zMRHRKKKSSDg/view?usp=sharing',
+          poster: '/experience/wso2/arm-video-poster.webp',
+        },
       ],
       organizationLink: 'https://wso2.com/',
       example: false,
@@ -221,38 +526,54 @@ export const portfolio: PortfolioData = {
   ],
   education: [
     {
+      id: 'university-of-moratuwa',
       institution: 'University of Moratuwa',
-      qualification:
-        'B.Sc. in Electronic & Telecommunication Engineering — Third-year undergraduate',
-      dates: 'Feb 2023 – Present',
+      qualification: 'B.Sc. in Electronic & Telecommunication Engineering',
+      date: 'February 2023 – Present',
+      status: 'Third-year Undergraduate',
       description:
-        'Undergraduate studies in electronic and telecommunication engineering with a cumulative GPA of 3.75/4.00.',
-      coursework: [
+        'Undergraduate studies in electronic and telecommunication engineering, with a cumulative GPA of 3.75/4.00.',
+      tags: [
         'Robotics',
-        'Embedded systems',
-        'Control systems',
-        'Signal processing',
+        'Artificial Intelligence',
+        'Embedded Systems',
+        'Signal Processing',
         'Electronics',
-        'Machine learning',
+        'Control Systems',
       ],
+      side: 'right',
     },
     {
+      id: 'esoft-metro-campus',
+      institution: 'ESOFT Metro Campus',
+      qualification:
+        'Diploma in Information Technology and Diploma in English',
+      date: 'February 2022 – February 2023',
+      credential: 'Pearson Assured',
+      description:
+        'Completed Pearson Assured diploma programmes in Information Technology and English.',
+      tags: [
+        'Information Technology',
+        'English',
+        'Computing Fundamentals',
+        'Communication Skills',
+      ],
+      side: 'left',
+    },
+    {
+      id: 'bandaranayake-college',
       institution: 'Bandaranayake College, Gampaha',
       qualification:
         'G.C.E. Advanced Level — Physical Science Stream',
-      dates: 'Jan 2013 – Jun 2022',
+      date: 'January 2013 – June 2022',
       description:
         'Achieved three A grades in Combined Mathematics, Physics, and Chemistry, with a Z-score of 2.4875 and an all-island rank of 166.',
-      coursework: ['Combined Mathematics', 'Physics', 'Chemistry'],
-    },
-    {
-      institution: 'ESOFT Metro Campus',
-      qualification:
-        'Diploma in Information Technology and Diploma in English — Pearson Assured',
-      dates: 'Completed',
-      description:
-        'Completed Pearson Assured diploma programs in Information Technology and English.',
-      coursework: ['Information Technology', 'English'],
+      tags: [
+        'Combined Mathematics',
+        'Physics',
+        'Chemistry',
+      ],
+      side: 'right',
     },
   ],
   certifications: [
@@ -359,392 +680,533 @@ export const portfolio: PortfolioData = {
   projects: [
     {
       title: 'Autonomous Mobile Robot Controller for Warehouses',
-      slug: 'autonomous-mobile-robot-warehouse-controller',
-      shortSummary:
-        'An autonomous warehouse robot combining microcontroller-level motion control, Jetson-based high-level computing, ROS 2 navigation, and SLAM.',
-      problem:
-        'Warehouse environments require mobile robots that can localize, navigate safely, and respond reliably while coordinating low-level hardware and high-level autonomy.',
-      solution:
-        'Built a two-level robotics architecture with a microcontroller for real-time control and a Jetson Nano B01 for mapping, planning, and navigation.',
-      challenges: [
-        'Integrating sensing, motor control, odometry, localization, and high-level navigation.',
-        'Creating and validating warehouse simulation environments before physical deployment.',
-      ],
-      outcome:
-        'Implemented the ROS 2 Humble SLAM Toolbox and navigation stack while continuing development of custom SLAM and warehouse simulations.',
+      slug: 'warehouse-amr',
+      category: 'Robotics & Autonomous Systems',
+      dateLabel: 'March 2025 – Present',
+      status: 'Ongoing',
+      cardDescription:
+        'An autonomous warehouse robot combining microcontroller-based low-level control, Jetson-based high-level autonomy, LiDAR sensing, SLAM, and ROS 2 navigation.',
+      heroSummary:
+        'Developing an autonomous mobile robot for warehouse environments using a microcontroller for real-time low-level control and a Jetson Nano B01 for mapping, planning, and high-level autonomous behaviour.',
       technologies: [
         'ROS 2 Humble',
-        'SLAM Toolbox',
-        'Navigation',
         'Gazebo',
-        'Jetson Nano',
-        'NEMA 24',
+        'Jetson Nano B01',
+        'Microcontroller',
+        'SLAM Toolbox',
+        'Robot Navigation',
         'Lakibeam 1S LiDAR',
-        'BNO055 IMU',
+        'Bosch BNO055 IMU',
+        'NEMA 24 Stepper Motors',
+        'C++',
+        'Python',
       ],
-      category: 'Other',
       featured: true,
-      thumbnail: {
-        src: '/projects/amr/thumbnail.webp',
-        alt: 'Autonomous mobile robot developed for warehouse automation',
+      accent: 'teal',
+      coverImage: {
+        src: '/projects/warehouse-amr/cover.webp',
+        alt: 'Autonomous mobile robot prototype for warehouse environments',
+        caption: 'Complete AMR prototype for warehouse automation.',
       },
-      gallery: [
+      sections: [
         {
-          src: '/projects/amr/gallery-01.webp',
-          alt: 'Warehouse autonomous mobile robot hardware platform',
+          id: 'overview',
+          heading: 'Overview',
+          paragraphs: [
+            'This project focuses on developing an autonomous mobile robot for warehouse automation. The system separates time-sensitive hardware control from high-level autonomy by using a microcontroller for low-level control and an NVIDIA Jetson Nano B01 for perception, mapping, planning, and navigation.',
+            'The robot uses closed-loop stepper-motor control, LiDAR, and inertial sensing to support accurate movement and environment awareness. The software stack combines custom robotics development with ROS 2 Humble, SLAM Toolbox, a navigation stack, and Gazebo-based simulation.',
+          ],
+        },
+        {
+          id: 'approach',
+          heading: 'System Approach',
+          paragraphs: [
+            'The architecture separates hardware feedback and real-time control from the higher-level autonomy stack. This makes the robot easier to test, debug, and extend while the project remains ongoing.',
+          ],
+          flow: [
+            'Sensors and Motor Feedback',
+            'Microcontroller-Based Low-Level Control',
+            'Jetson Nano B01',
+            'SLAM and Localization',
+            'ROS 2 Navigation',
+            'Warehouse Task Execution',
+          ],
+          mediaIds: ['hardware', 'gazebo-simulation', 'slam-navigation'],
+        },
+        {
+          id: 'contribution',
+          heading: 'My Contribution',
+          paragraphs: [],
+          bullets: [
+            'Designed and developed the robot-control architecture',
+            'Integrated low-level and high-level control layers',
+            'Worked on a custom SLAM algorithm for the robot',
+            'Implemented ROS 2 Humble integration',
+            'Configured SLAM Toolbox and the navigation stack',
+            'Developed warehouse simulation environments in Gazebo',
+            'Integrated NEMA 24 stepper motors with closed-loop drivers',
+            'Integrated the Lakibeam 1S LiDAR',
+            'Integrated the Bosch BNO055 IMU',
+            'Tested communication between hardware and autonomy components',
+          ],
         },
       ],
-      githubLink: 'https://github.com/AMR-Platform',
-      liveDemoLink: '',
-      status: 'In progress',
-      year: '2025 – Present',
-      goals: [
-        'Develop reliable warehouse autonomy',
-        'Combine real-time low-level control with high-level navigation',
-        'Evaluate SLAM and navigation in simulation and real environments',
+      media: [
+        {
+          id: 'cover',
+          type: 'image',
+          src: '/projects/warehouse-amr/cover.webp',
+          alt: 'Autonomous mobile robot prototype for warehouse environments',
+          caption: 'Complete AMR prototype for warehouse automation.',
+        },
+        {
+          id: 'hardware',
+          type: 'image',
+          src: '/projects/warehouse-amr/hardware.webp',
+          alt: 'Hardware and electronics layout for the warehouse AMR',
+          caption: 'Hardware and electronics layout for sensing and control.',
+        },
+        {
+          id: 'gazebo-simulation',
+          type: 'image',
+          src: '/projects/warehouse-amr/gazebo-simulation.webp',
+          alt: 'Gazebo warehouse simulation for the autonomous mobile robot',
+          caption: 'Warehouse simulation environment in Gazebo.',
+        },
+        {
+          id: 'slam-navigation',
+          type: 'image',
+          src: '/projects/warehouse-amr/slam-navigation.webp',
+          alt: 'SLAM map or navigation visualization for the warehouse AMR',
+          caption: 'SLAM and navigation visualization for warehouse autonomy.',
+        },
       ],
-      contribution:
-        'Contributed to system architecture, robotics integration, SLAM and navigation development, simulation, sensing, and motion-control planning.',
-      technicalDecisions: [
-        'Separated real-time low-level control from high-level perception and navigation.',
-        'Used ROS 2 Humble with Gazebo, SLAM Toolbox, and the navigation stack for modular development.',
-      ],
+      links: [],
+      seoTitle: 'Autonomous Warehouse Robot | Jeewantha Sadaruwan',
+      seoDescription:
+        'Autonomous mobile robot project using ROS 2, Jetson Nano B01, LiDAR, SLAM, Gazebo, and microcontroller-based low-level control.',
     },
     {
-      title: 'Battle Robot Platform',
-      slug: 'battle-robot-platform',
-      shortSummary:
-        'A modular metal battle robot platform with a vertical spinning weapon and a high-performance control system.',
-      problem:
-        'A competition robot must survive impacts while remaining controllable, maintainable, and powerful within strict design constraints.',
-      solution:
-        'Designed a sturdy modular platform with a metal chassis, vertical spinning weapon, and efficient control mechanism.',
-      challenges: [
-        'Balancing structural durability, weapon performance, and controllability.',
-        'Building a maintainable platform suitable for rapid competition repairs.',
-      ],
-      outcome:
-        'The platform finished in the top 10 among more than 60 teams at the ElectroCombat Battle Robot Competition 2024.',
+      title: 'Ride Booking Agent',
+      slug: 'ride-booking-agent',
+      category: 'Agentic AI & Full-Stack Development',
+      dateLabel: '2025',
+      status: 'Completed',
+      cardDescription:
+        'An AI-powered ride-booking platform that processes natural-language requests and uses tools for geocoding, routing, pricing, vehicle search, booking, and calendar synchronization.',
+      heroSummary:
+        'A full-stack agentic application for booking rides in Sri Lanka through natural-language conversation using GPT-4o and the Strands Agents SDK.',
       technologies: [
-        'Embedded control',
-        'Motor control',
-        'Mechanical design',
-        'Metal fabrication',
-        'Electronics',
+        'OpenAI GPT-4o',
+        'Strands Agents SDK',
+        'React',
+        'TypeScript',
+        'FastAPI',
+        'PostgreSQL',
+        'JWT',
+        'OpenStreetMap Nominatim',
+        'OSRM',
+        'Google Calendar API',
+        'Python',
       ],
-      category: 'Other',
       featured: true,
-      thumbnail: {
-        src: '/projects/battle-robot/thumbnail.webp',
-        alt: 'Battle robot platform with a vertical spinning weapon',
+      accent: 'violet',
+      coverImage: {
+        src: '/projects/ride-booking-agent/cover.webp',
+        alt: 'Ride Booking Agent application interface',
+        caption: 'Main ride-booking interface for natural-language requests.',
       },
-      gallery: [
+      sections: [
         {
-          src: '/projects/battle-robot/gallery-01.webp',
-          alt: 'Competition battle robot mechanical platform',
+          id: 'overview',
+          heading: 'Overview',
+          paragraphs: [
+            'The Ride Booking Agent allows users to request and manage rides using natural-language conversation. The agent identifies missing booking information, invokes the required tools, calculates routes and pricing, and coordinates the booking workflow.',
+            'The project combines an intelligent-agent layer with a React and TypeScript frontend, FastAPI backend, PostgreSQL database, JWT-based authentication, and multiple external APIs.',
+          ],
+        },
+        {
+          id: 'approach',
+          heading: 'System Approach',
+          paragraphs: [
+            'The system converts conversation into a controlled tool-using workflow. The agent gathers missing details, calls the appropriate tools, stores booking state, and synchronizes confirmed rides with calendar workflows.',
+          ],
+          flow: [
+            'User Conversation',
+            'GPT-4o and Strands Agent',
+            'Tool Selection',
+            'Geocoding and Route Calculation',
+            'Vehicle Search and Dynamic Pricing',
+            'Booking Confirmation',
+            'PostgreSQL and Calendar Synchronization',
+          ],
+          mediaIds: ['architecture', 'route-result', 'booking-flow'],
+        },
+        {
+          id: 'contribution',
+          heading: 'My Contribution',
+          paragraphs: [],
+          bullets: [
+            'Designed the high-level and detailed system architecture',
+            'Developed the agent workflow using the Strands Agents SDK',
+            'Integrated GPT-4o for natural-language interaction',
+            'Built the frontend using React and TypeScript',
+            'Built backend APIs using FastAPI',
+            'Designed persistent PostgreSQL storage',
+            'Added JWT-based authentication',
+            'Implemented ride and booking management',
+            'Integrated geocoding with OpenStreetMap Nominatim',
+            'Integrated route calculation with OSRM',
+            'Developed tools for vehicle search and dynamic pricing',
+            'Added booking confirmation workflows',
+            'Integrated Google Calendar synchronization',
+            'Performed end-to-end testing and prompt refinement',
+          ],
         },
       ],
-      githubLink:
-        'https://github.com/JeewanthaSadaruwan/Battle-Robot-Platform',
-      liveDemoLink: '',
-      status: 'Ongoing',
-      year: '2024 – Present',
-      goals: [
-        'Build a durable competition robot',
-        'Develop an effective control system',
-        'Maintain a modular and repairable design',
-      ],
-      contribution:
-        'Contributed to mechanical construction, modular platform design, electronics, and control-system development.',
-      technicalDecisions: [
-        'Used a metal structure for impact resistance.',
-        'Adopted a modular architecture to simplify maintenance and iterative upgrades.',
-      ],
-    },
-    {
-      title: 'MicroJAS Micromouse Robot Platform',
-      slug: 'microjas-micromouse-robot',
-      shortSummary:
-        'A custom micromouse robot platform with an STM32 controller, encoder-equipped motors, infrared wall sensing, and a two-layer PCB.',
-      problem:
-        'Fast maze-solving robots require compact sensing, precise motor control, and reliable embedded hardware.',
-      solution:
-        'Designed a custom two-layer PCB integrating the STM32F405RGT6, infrared wall sensors, motor drivers, and encoder-equipped N20 motors.',
-      challenges: [
-        'Integrating sensing and motor-control hardware within a compact PCB layout.',
-        'Achieving reliable wall detection and motion feedback for maze navigation.',
-      ],
-      outcome:
-        'Produced a dedicated embedded platform for future high-speed micromouse control and maze-solving development.',
-      technologies: [
-        'STM32F405RGT6',
-        'C/C++',
-        'PCB design',
-        'TB6612FNG',
-        'IR sensing',
-        'Encoder odometry',
-      ],
-      category: 'Other',
-      featured: true,
-      thumbnail: {
-        src: '/projects/microjas/thumbnail.webp',
-        alt: 'MicroJAS micromouse robot and custom PCB',
-      },
-      gallery: [
+      media: [
         {
-          src: '/projects/microjas/gallery-01.webp',
-          alt: 'Custom two-layer PCB for the MicroJAS micromouse robot',
+          id: 'cover',
+          type: 'image',
+          src: '/projects/ride-booking-agent/cover.webp',
+          alt: 'Ride Booking Agent main user interface',
+          caption: 'Main user interface for ride-booking conversations.',
+        },
+        {
+          id: 'architecture',
+          type: 'image',
+          src: '/projects/ride-booking-agent/architecture.webp',
+          alt: 'Ride Booking Agent system architecture',
+          caption: 'System architecture for the agentic ride-booking workflow.',
+        },
+        {
+          id: 'route-result',
+          type: 'image',
+          src: '/projects/ride-booking-agent/route-result.webp',
+          alt: 'Route result generated by the ride booking system',
+          caption: 'Map and route calculation result.',
+        },
+        {
+          id: 'booking-flow',
+          type: 'image',
+          src: '/projects/ride-booking-agent/booking-flow.webp',
+          alt: 'Booking flow or agent tool execution screen',
+          caption: 'Booking workflow and tool execution view.',
         },
       ],
-      githubLink:
-        'https://github.com/JeewanthaSadaruwan/MicroJAS---Micromouse-Robot',
-      liveDemoLink: '',
-      status: 'Prototype',
-      year: '2025',
-      goals: [
-        'Create compact custom hardware',
-        'Support accurate wall sensing',
-        'Enable precise closed-loop motion control',
+      links: [
+        {
+          label: 'View Repository',
+          href: 'https://github.com/JeewanthaSadaruwan/Ride-Booking-Agent-.git',
+          type: 'repository',
+        },
       ],
-      contribution:
-        'Designed the custom PCB and integrated the microcontroller, sensor, motor-driver, and encoder interfaces.',
-      technicalDecisions: [
-        'Selected an STM32F405RGT6 for real-time embedded control.',
-        'Used dedicated infrared emitters and phototransistors for wall detection.',
-      ],
+      seoTitle: 'Agentic AI Ride Booking System | Jeewantha Sadaruwan',
+      seoDescription:
+        'Agentic AI ride-booking system using GPT-4o, Strands Agents SDK, React, FastAPI, PostgreSQL, geocoding, routing, pricing, and booking tools.',
     },
     {
       title: 'Fitness Tracker with Machine Learning',
-      slug: 'fitness-tracker-machine-learning',
-      shortSummary:
-        'A machine-learning pipeline for recognizing barbell exercises and estimating repetitions from wearable motion-sensor data.',
-      problem:
-        'Raw accelerometer and gyroscope signals are difficult to interpret directly for exercise classification and repetition counting.',
-      solution:
-        'Created a data-processing and model-evaluation workflow covering visualization, outlier detection, feature engineering, PCA, classification, and repetition estimation.',
-      challenges: [
-        'Cleaning noisy time-series sensor data.',
-        'Selecting useful features and comparing models with different assumptions.',
-      ],
-      outcome:
-        'Built and evaluated Naive Bayes, SVM, Random Forest, and Neural Network classifiers for exercise recognition.',
+      slug: 'fitness-tracker-ml',
+      category: 'Machine Learning & Sensor Analytics',
+      dateLabel: 'August 2025 – Present',
+      status: 'Ongoing',
+      cardDescription:
+        'A machine-learning pipeline that analyses wearable accelerometer and gyroscope data to recognise barbell exercises and estimate repetition counts.',
+      heroSummary:
+        'Analysing MetaMotion wearable-sensor data and developing machine-learning models for exercise classification and repetition counting.',
       technologies: [
         'Python',
-        'Machine learning',
+        'NumPy',
+        'Pandas',
+        'Matplotlib',
+        'scikit-learn',
         'PCA',
-        'Naive Bayes',
-        'SVM',
-        'Random Forest',
-        'Neural Networks',
-        'Sensor data',
+        'MetaMotion Sensors',
+        'Jupyter Notebook',
       ],
-      category: 'AI/ML',
-      featured: true,
-      thumbnail: {
-        src: '/projects/fitness-tracker/thumbnail.webp',
-        alt: 'Machine-learning fitness tracker data analysis preview',
+      featured: false,
+      accent: 'blue',
+      coverImage: {
+        src: '/projects/fitness-tracker-ml/cover.webp',
+        alt: 'MetaMotion wearable sensor setup for fitness tracking',
+        caption: 'Wearable sensor setup used for collecting workout motion data.',
       },
-      gallery: [
+      sections: [
         {
-          src: '/projects/fitness-tracker/gallery-01.webp',
-          alt: 'Exercise sensor data visualization and model analysis',
+          id: 'overview',
+          heading: 'Overview',
+          paragraphs: [
+            'This project uses accelerometer and gyroscope data collected from MetaMotion wearable devices during gym workouts. The objective is to recognise exercise types and estimate repetition counts from time-series sensor data.',
+            'The workflow covers exploratory analysis, visualization, outlier detection, feature engineering, dimensionality reduction, model training, comparison, and evaluation.',
+          ],
+        },
+        {
+          id: 'approach',
+          heading: 'Technical Workflow',
+          paragraphs: [
+            'The processing pipeline moves from raw sensor data into cleaned signals, engineered features, model training, and repetition-count exploration using the available project outputs.',
+          ],
+          flow: [
+            'Raw Accelerometer and Gyroscope Data',
+            'Cleaning and Outlier Detection',
+            'Signal Processing and Feature Engineering',
+            'PCA and Dimensionality Reduction',
+            'Classifier Training',
+            'Exercise Recognition',
+            'Repetition Counting',
+          ],
+          mediaIds: ['sensor-signals', 'feature-analysis', 'model-results'],
+        },
+        {
+          id: 'contribution',
+          heading: 'My Contribution',
+          paragraphs: [],
+          bullets: [
+            'Loaded and explored MetaMotion sensor data',
+            'Visualized accelerometer and gyroscope signals',
+            'Identified and handled outliers',
+            'Developed time-domain and signal-derived features',
+            'Applied dimensionality reduction using PCA',
+            'Built Naive Bayes models',
+            'Built Support Vector Machine models',
+            'Built Random Forest models',
+            'Built a Neural Network model',
+            'Compared classifier behaviour',
+            'Developed exercise-recognition workflows',
+            'Explored repetition-count estimation',
+          ],
         },
       ],
-      githubLink:
-        'https://github.com/JeewanthaSadaruwan/Fitness-Tracker.git',
-      liveDemoLink: '',
-      status: 'In progress',
-      year: '2025 – Present',
-      goals: [
-        'Recognize exercise types from wearable sensors',
-        'Estimate repetition counts',
-        'Compare multiple machine-learning models',
+      media: [
+        {
+          id: 'cover',
+          type: 'image',
+          src: '/projects/fitness-tracker-ml/cover.webp',
+          alt: 'MetaMotion wearable sensor setup for fitness tracking',
+          caption: 'MetaMotion wearable device or collection setup.',
+        },
+        {
+          id: 'sensor-signals',
+          type: 'image',
+          src: '/projects/fitness-tracker-ml/sensor-signals.webp',
+          alt: 'Accelerometer and gyroscope signal visualization',
+          caption: 'Sensor signal visualization for workout motion data.',
+        },
+        {
+          id: 'feature-analysis',
+          type: 'image',
+          src: '/projects/fitness-tracker-ml/feature-analysis.webp',
+          alt: 'Feature engineering or PCA visualization',
+          caption: 'Feature analysis and dimensionality-reduction view.',
+        },
+        {
+          id: 'model-results',
+          type: 'image',
+          src: '/projects/fitness-tracker-ml/model-results.webp',
+          alt: 'Model evaluation chart from real exported results',
+          caption: 'Model evaluation chart, shown only if a real result image is supplied.',
+        },
       ],
-      contribution:
-        'Performed data exploration, outlier handling, feature engineering, dimensionality reduction, model training, and evaluation.',
-      technicalDecisions: [
-        'Used PCA to investigate lower-dimensional feature representations.',
-        'Compared multiple classical and neural approaches rather than relying on a single model.',
-      ],
+      links: [],
+      seoTitle: 'Machine Learning Fitness Tracker | Jeewantha Sadaruwan',
+      seoDescription:
+        'Machine-learning fitness tracker using wearable accelerometer and gyroscope data for exercise recognition and repetition-count exploration.',
     },
     {
-      title: 'Advanced Maze-Solving Robot Simulation',
-      slug: 'advanced-maze-solving-webots',
-      shortSummary:
-        'An A*-based robot pathfinding system in Webots with dynamic obstacle avoidance and modular maze environments.',
-      problem:
-        'Autonomous robots must plan efficient paths while reacting to changing obstacles inside structured environments.',
-      solution:
-        'Implemented A* pathfinding in C++ and tested it across modular Webots maze environments with dynamic obstacle handling.',
-      challenges: [
-        'Maintaining efficient path planning as the environment changes.',
-        'Connecting simulation state, robot motion, and obstacle updates.',
+      title: 'FingerReader — Smart Assistive Device',
+      slug: 'fingerreader-assistive-device',
+      category: 'Embedded AI & Assistive Technology',
+      dateLabel: 'April 2025',
+      status: 'Prototype',
+      cardDescription:
+        'An ESP32-based assistive wearable that reads printed text and supports speech feedback, haptic guidance, fall detection, and offline TinyML-based recognition.',
+      heroSummary:
+        'A wearable embedded system designed to help visually impaired users read printed content and receive real-time speech and haptic feedback.',
+      technologies: [
+        'ESP32',
+        'TinyML',
+        'Embedded C/C++',
+        'Computer Vision',
+        'OCR',
+        'Haptic Feedback',
+        'Audio Output',
+        'Inertial Sensing',
       ],
-      outcome:
-        'Created a reusable simulation workflow for evaluating maze-solving and navigation behavior.',
-      technologies: ['Webots', 'C++', 'A* pathfinding', 'Robot simulation'],
-      category: 'Other',
       featured: false,
-      thumbnail: {
-        src: '/projects/maze-solving/thumbnail.webp',
-        alt: 'Webots maze-solving robot simulation',
+      accent: 'amber',
+      coverImage: {
+        src: '/projects/fingerreader/cover.webp',
+        alt: 'FingerReader assistive wearable prototype',
+        caption: 'FingerReader assistive wearable prototype.',
       },
-      gallery: [
+      sections: [
         {
-          src: '/projects/maze-solving/gallery-01.webp',
-          alt: 'Robot navigating a modular maze environment in Webots',
+          id: 'overview',
+          heading: 'Overview',
+          paragraphs: [
+            'FingerReader is an ESP32-based assistive wearable designed for users with visual impairments. The device captures printed information, processes it, and provides spoken feedback while using haptic guidance to assist interaction.',
+            'The prototype also explores fall detection and offline TinyML-based OCR or object-recognition capabilities, reducing dependence on a continuous external connection.',
+          ],
+        },
+        {
+          id: 'approach',
+          heading: 'System Approach',
+          paragraphs: [
+            'The prototype connects visual input, embedded processing, recognition, speech output, haptic guidance, and alert behaviour into a compact assistive-device workflow.',
+          ],
+          flow: [
+            'Camera or Visual Input',
+            'ESP32 Processing',
+            'TinyML Recognition',
+            'Text or Object Interpretation',
+            'Speech Output and Haptic Guidance',
+            'Fall-Detection Alert',
+          ],
+          mediaIds: ['hardware', 'architecture', 'demonstration'],
+        },
+        {
+          id: 'contribution',
+          heading: 'My Contribution',
+          paragraphs: [],
+          bullets: [
+            'Developed the ESP32-based wearable prototype',
+            'Integrated visual-input processing',
+            'Implemented speech-output workflows',
+            'Added haptic guidance',
+            'Explored TinyML-based offline OCR or object recognition',
+            'Integrated fall-detection functionality',
+            'Tested the interaction between sensing, processing, and feedback',
+            'Considered low-power and portable embedded operation',
+          ],
         },
       ],
-      githubLink:
-        'https://github.com/JeewanthaSadaruwan/Webots---Maze-Solving-Robot-Simulation',
-      liveDemoLink: '',
-      status: 'Completed',
-      year: '2024',
-      goals: [
-        'Implement efficient maze navigation',
-        'Support dynamic obstacle avoidance',
-        'Evaluate algorithms in simulation',
+      media: [
+        {
+          id: 'cover',
+          type: 'image',
+          src: '/projects/fingerreader/cover.webp',
+          alt: 'FingerReader assistive wearable prototype',
+          caption: 'Complete FingerReader wearable prototype.',
+        },
+        {
+          id: 'hardware',
+          type: 'image',
+          src: '/projects/fingerreader/hardware.webp',
+          alt: 'FingerReader electronics or internal design',
+          caption: 'Electronics or internal device design.',
+        },
+        {
+          id: 'architecture',
+          type: 'image',
+          src: '/projects/fingerreader/architecture.webp',
+          alt: 'FingerReader system architecture',
+          caption: 'Assistive-device system architecture.',
+        },
+        {
+          id: 'demonstration',
+          type: 'image',
+          src: '/projects/fingerreader/demonstration.webp',
+          alt: 'FingerReader device demonstration',
+          caption: 'Prototype demonstration media.',
+        },
       ],
-      contribution:
-        'Designed the simulation setup and implemented the A*-based pathfinding and obstacle-avoidance logic.',
-      technicalDecisions: [
-        'Used A* for goal-directed path planning.',
-        'Used modular maze environments to test behavior across multiple layouts.',
-      ],
+      links: [],
+      seoTitle: 'FingerReader Assistive Wearable | Jeewantha Sadaruwan',
+      seoDescription:
+        'FingerReader assistive wearable prototype using ESP32, TinyML, speech feedback, haptic guidance, fall detection, and cautious offline recognition exploration.',
     },
     {
       title: 'Vision-Based Navigation of a Kobuki Robot',
-      slug: 'vision-based-kobuki-navigation',
-      shortSummary:
-        'An autonomous Kobuki robot using Raspberry Pi and OpenCV for real-time visual obstacle detection and navigation.',
-      problem:
-        'A mobile robot needs to understand visual obstacles and make navigation decisions from live camera input.',
-      solution:
-        'Combined Raspberry Pi processing, OpenCV vision, and Kobuki mobile-base control for real-time navigation.',
-      challenges: [
-        'Processing camera input quickly enough for responsive motion.',
-        'Translating visual detections into stable robot-control decisions.',
-      ],
-      outcome:
-        'Developed a functional vision-based navigation approach for a Kobuki robot.',
-      technologies: ['Kobuki', 'Raspberry Pi', 'OpenCV', 'Python', 'Computer vision'],
-      category: 'AI/ML',
-      featured: false,
-      thumbnail: {
-        src: '/projects/kobuki/thumbnail.webp',
-        alt: 'Kobuki robot using a camera for autonomous navigation',
-      },
-      gallery: [
-        {
-          src: '/projects/kobuki/gallery-01.webp',
-          alt: 'Vision-processing setup used for Kobuki robot navigation',
-        },
-      ],
-      githubLink:
-        'https://github.com/JeewanthaSadaruwan/Vision-Based-Navigation-of-a-Kobuki-Robot',
-      liveDemoLink: '',
+      slug: 'kobuki-vision-navigation',
+      category: 'Computer Vision & Mobile Robotics',
+      dateLabel: 'June 2024',
       status: 'Completed',
-      year: '2024',
-      goals: [
-        'Detect obstacles using a camera',
-        'Navigate autonomously',
-        'Run vision processing on embedded hardware',
+      cardDescription:
+        'An autonomous Kobuki robot using Raspberry Pi and OpenCV for real-time obstacle detection and camera-based navigation.',
+      heroSummary:
+        'A compact mobile-robotics project combining Raspberry Pi, OpenCV, and camera input for real-time environment awareness and obstacle-aware navigation.',
+      technologies: [
+        'Kobuki',
+        'Raspberry Pi',
+        'OpenCV',
+        'Python',
+        'Computer Vision',
+        'Image Processing',
+        'Camera-Based Navigation',
       ],
-      contribution:
-        'Developed the OpenCV-based perception and navigation workflow and integrated it with the Kobuki robot platform.',
-      technicalDecisions: [
-        'Used Raspberry Pi for compact onboard processing.',
-        'Used OpenCV to build a practical real-time vision pipeline.',
-      ],
-    },
-    {
-      title: 'FingerReader Assistive Wearable',
-      slug: 'fingerreader-assistive-wearable',
-      shortSummary:
-        'An ESP32-based wearable concept that reads printed text aloud and provides haptic guidance and fall detection.',
-      problem:
-        'People with visual impairments may need portable assistance for reading printed text and receiving immediate environmental feedback.',
-      solution:
-        'Designed an assistive wearable concept combining speech output, haptic guidance, fall detection, and TinyML-based offline recognition.',
-      challenges: [
-        'Running useful recognition features on constrained embedded hardware.',
-        'Combining accessibility feedback modes in a compact wearable design.',
-      ],
-      outcome:
-        'Created a project foundation for an offline assistive reading and guidance device.',
-      technologies: ['ESP32', 'TinyML', 'OCR', 'Haptics', 'Speech output', 'Embedded systems'],
-      category: 'AI/ML',
       featured: false,
-      thumbnail: {
-        src: '/projects/fingerreader/thumbnail.webp',
-        alt: 'FingerReader assistive wearable concept',
+      accent: 'green',
+      coverImage: {
+        src: '/projects/kobuki-navigation/cover.webp',
+        alt: 'Kobuki robot setup for vision-based navigation',
+        caption: 'Kobuki robot setup for camera-based navigation.',
       },
-      gallery: [
+      sections: [
         {
-          src: '/projects/fingerreader/gallery-01.webp',
-          alt: 'Assistive wearable prototype for reading printed text',
+          id: 'overview',
+          heading: 'Overview',
+          paragraphs: [
+            'This project explored camera-based navigation on a Kobuki mobile robot. A Raspberry Pi processed the camera stream using OpenCV to detect environment features and identify obstacles in real time.',
+            'The resulting perception information was used to support autonomous movement and obstacle-aware navigation.',
+          ],
+        },
+        {
+          id: 'approach',
+          heading: 'System Approach',
+          paragraphs: [
+            'The system links camera input, Raspberry Pi processing, OpenCV image-processing logic, and movement commands into a compact mobile-robot navigation workflow.',
+          ],
+          mediaIds: ['vision-output', 'navigation-test'],
+        },
+        {
+          id: 'contribution',
+          heading: 'My Contribution',
+          paragraphs: [],
+          bullets: [
+            'Configured the Kobuki mobile-robot platform',
+            'Integrated Raspberry Pi-based processing',
+            'Connected and processed the camera feed',
+            'Implemented real-time image-processing logic using OpenCV',
+            'Developed obstacle-detection behaviour',
+            'Connected vision output with robot movement commands',
+            'Tested navigation behaviour in practical environments',
+          ],
         },
       ],
-      githubLink: '',
-      liveDemoLink: '',
-      status: 'Prototype',
-      year: '2025',
-      goals: [
-        'Read printed text with audio feedback',
-        'Provide haptic guidance',
-        'Support offline assistive intelligence',
-      ],
-      contribution:
-        'Worked on the embedded wearable concept, sensing, user feedback, and TinyML-based offline recognition approach.',
-      technicalDecisions: [
-        'Used ESP32 as the embedded control platform.',
-        'Prioritized offline processing to reduce dependence on network connectivity.',
-      ],
-    },
-    {
-      title: 'Smart Multi-Outlet',
-      slug: 'smart-multi-outlet',
-      shortSummary:
-        'An ESP32-based multi-outlet system with real-time energy monitoring, remote control, a custom PCB, and a 3D-printed enclosure.',
-      problem:
-        'Users need better visibility and remote control over the energy consumption of multiple electrical devices.',
-      solution:
-        'Built a scalable connected outlet platform combining power monitoring, app-based control, custom electronics, and a purpose-built enclosure.',
-      challenges: [
-        'Integrating safe power measurement and switching electronics.',
-        'Designing a compact PCB and enclosure for a multi-outlet system.',
-      ],
-      outcome:
-        'Produced a working smart-energy-management prototype with real-time monitoring and remote control.',
-      technologies: ['ESP32', 'PCB design', 'Energy monitoring', 'Remote control', '3D printing'],
-      category: 'Other',
-      featured: false,
-      thumbnail: {
-        src: '/projects/smart-outlet/thumbnail.webp',
-        alt: 'Smart multi-outlet energy-monitoring prototype',
-      },
-      gallery: [
+      media: [
         {
-          src: '/projects/smart-outlet/gallery-01.webp',
-          alt: 'Custom PCB and enclosure for the smart multi-outlet',
+          id: 'cover',
+          type: 'image',
+          src: '/projects/kobuki-navigation/cover.webp',
+          alt: 'Kobuki robot setup for vision-based navigation',
+          caption: 'Kobuki robot setup for camera-based navigation.',
+        },
+        {
+          id: 'vision-output',
+          type: 'image',
+          src: '/projects/kobuki-navigation/vision-output.webp',
+          alt: 'Camera-processing output for Kobuki navigation',
+          caption: 'Camera-processing output used for obstacle awareness.',
+        },
+        {
+          id: 'navigation-test',
+          type: 'image',
+          src: '/projects/kobuki-navigation/navigation-test.webp',
+          alt: 'Kobuki navigation demonstration or test setup',
+          caption: 'Navigation test media for the Kobuki robot.',
         },
       ],
-      githubLink:
-        'https://github.com/JeewanthaSadaruwan/Smart-Multi-Outlet-',
-      liveDemoLink: '',
-      status: 'Completed',
-      year: '2024',
-      goals: [
-        'Monitor power usage in real time',
-        'Provide remote outlet control',
-        'Create a scalable custom hardware design',
+      links: [
+        {
+          label: 'View Repository',
+          href: 'https://github.com/JeewanthaSadaruwan/Vision-Based-Navigation-of-a-Kobuki-Robot',
+          type: 'repository',
+        },
       ],
-      contribution:
-        'Contributed to the ESP32 system, custom PCB, energy-monitoring integration, remote-control workflow, and enclosure design.',
-      technicalDecisions: [
-        'Used ESP32 for connectivity and control.',
-        'Created a custom PCB and 3D-printed enclosure for a compact integrated prototype.',
-      ],
+      seoTitle: 'Vision-Based Kobuki Navigation | Jeewantha Sadaruwan',
+      seoDescription:
+        'Vision-based Kobuki robot navigation project using Raspberry Pi, OpenCV, Python, camera input, and obstacle-aware mobile-robot behaviour.',
     },
   ],
   contact: {

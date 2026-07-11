@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { SiteLayout } from '@/components/layout/SiteLayout'
 import { ScrollToTop } from '@/components/shared/ScrollToTop'
 import { HomePage } from '@/pages/HomePage'
+import { ExperiencePage } from '@/pages/ExperiencePage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { ProjectPage } from '@/pages/ProjectPage'
 
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="/experience/:slug" element={<ExperiencePage />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

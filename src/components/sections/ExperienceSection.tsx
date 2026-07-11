@@ -1,41 +1,58 @@
-import { ExternalLink } from 'lucide-react'
+import { ArrowUpRight, Building2, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { portfolio } from '@/data/portfolio'
-import { SectionHeader } from '@/components/shared/SectionHeader'
+import { buttonVariants } from '@/components/ui/button-variants'
 
 export function ExperienceSection() {
   return (
     <section id="experience" className="section container" aria-labelledby="experience-title">
-      <SectionHeader
-        eyebrow="Experience"
-        title="Structured for internships, projects, and contributions."
-        description="Replace the example item with real roles, freelance work, open-source work, or university project experience."
-      />
-      <div className="timeline" id="experience-title">
+      <div className="section-header experience-section-header" data-reveal>
+        <h2 id="experience-title">Experience</h2>
+      </div>
+      <div className="experience-card-list">
         {portfolio.experience.map((item) => (
-          <article className="surface-card timeline-item" key={`${item.role}-${item.organization}`} data-reveal>
-            <div className="timeline-marker" aria-hidden="true" />
-            <div className="timeline-meta">
-              <span>{item.startDate} - {item.endDate}</span>
-              <span>{item.location}</span>
+          <article className="surface-card experience-card" key={item.slug} data-reveal>
+            <div className="experience-meta-column">
+              <span>{item.dateLabel}</span>
+              <span>
+                <MapPin aria-hidden="true" size={15} />
+                {item.location}
+              </span>
             </div>
-            <div className="timeline-content">
-              {item.example ? <p className="example-label">Example entry</p> : null}
-              <h3>{item.role}</h3>
-              <a href={item.organizationLink} target="_blank" rel="noreferrer">
-                {item.organization}
-                <ExternalLink aria-hidden="true" size={14} />
-              </a>
-              <p>{item.description}</p>
-              <ul>
+
+            <div className="experience-card-content">
+              <div className="experience-card-heading">
+                <div>
+                  <h3>{item.role}</h3>
+                  <a href={item.organizationLink} target="_blank" rel="noreferrer">
+                    <Building2 aria-hidden="true" size={16} />
+                    {item.organization}
+                  </a>
+                </div>
+              </div>
+
+              <div className="experience-project-summary">
+                <p className="experience-project-label">Main project</p>
+                <h4>{item.projectTitle}</h4>
+                <p>{item.summary}</p>
+              </div>
+
+              <ul className="experience-achievements">
                 {item.achievements.map((achievement) => (
                   <li key={achievement}>{achievement}</li>
                 ))}
               </ul>
+
               <div className="chip-list">
-                {item.technologies.map((technology) => (
+                {item.summaryTechnologies.map((technology) => (
                   <span className="chip" key={technology}>{technology}</span>
                 ))}
               </div>
+
+              <Link className={buttonVariants({ variant: 'secondary' })} to={`/experience/${item.slug}`}>
+                View Full Experience
+                <ArrowUpRight aria-hidden="true" size={18} />
+              </Link>
             </div>
           </article>
         ))}
