@@ -31,7 +31,7 @@ export function AchievementsSection() {
   }
 
   return (
-    <section id="achievements" className="section container" aria-labelledby="achievements-title">
+    <section id="achievements" className="section container achievements-section" aria-labelledby="achievements-title">
       <SectionHeader
         eyebrow="Achievements"
         title="Achievements"
@@ -39,8 +39,8 @@ export function AchievementsSection() {
         headingId="achievements-title"
       />
       <div className="achievement-grid">
-        {items.map((item) => (
-          <article className="surface-card achievement-card" key={`${item.title}-${item.type}`} data-reveal>
+        {items.map((item, index) => (
+          <article className={`surface-card achievement-card achievement-accent-${(index % 3) + 1}`} key={`${item.title}-${item.type}`} data-reveal>
             {item.image ? <AchievementImage image={item.image} /> : null}
             <div className="achievement-card-content">
               <span>{item.type}</span>

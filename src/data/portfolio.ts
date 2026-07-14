@@ -778,6 +778,7 @@ export const portfolio: PortfolioData = {
         alt: 'Sri Lankan Robotics Challenge 2026 organizing team',
       },
       highlights: ['Strategic event leadership', 'Team and operations management'],
+      accent: 'amber',
     },
     {
       label: 'Event Coordinator',
@@ -790,6 +791,7 @@ export const portfolio: PortfolioData = {
         alt: 'Sri Lankan Robotics Challenge 2025 event',
       },
       highlights: ['Event coordination and logistics', 'Multidisciplinary team leadership'],
+      accent: 'blue',
     },
   ],
   projects: [
@@ -1858,6 +1860,5 @@ export const portfolio: PortfolioData = {
     location: 'Sri Lanka',
     availability:
       'Open to freelance opportunities, part-time roles, and collaborations in Embodied AI, agentic AI, robotics, and intelligent systems.',
-    formEndpoint: 'https://formsubmit.co/ajax/jeewansadaruwan987@gmail.com',
   },
 }

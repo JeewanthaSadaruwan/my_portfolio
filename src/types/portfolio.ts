@@ -128,6 +128,7 @@ export interface LeadershipItem {
   period: string
   description: string
   highlights: string[]
+  accent: 'amber' | 'blue'
   image?: ProjectImage
 }
 
@@ -246,7 +247,6 @@ export interface ContactInfo {
   phoneHref: string
   location: string
   availability: string
-  formEndpoint?: string
 }
 
 export interface PortfolioData {

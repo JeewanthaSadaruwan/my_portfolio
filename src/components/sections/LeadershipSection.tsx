@@ -32,7 +32,7 @@ export function LeadershipSection() {
 
       <div className="achievement-grid leadership-grid">
         {portfolio.leadership.map((item) => (
-          <article className="surface-card achievement-card leadership-card" key={`${item.title}-${item.period}`} data-reveal>
+          <article className={`surface-card achievement-card leadership-card leadership-accent-${item.accent}`} key={`${item.title}-${item.period}`} data-reveal>
             {item.image ? <LeadershipImage image={item.image} /> : null}
             <div className="achievement-card-content leadership-card-content">
               <span>{item.label}</span>
