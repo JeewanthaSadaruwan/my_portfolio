@@ -295,7 +295,12 @@ export function ProjectPage() {
               <Images aria-hidden="true" size={18} />
             </Link>
             {repositoryLink ? (
-              <a className={buttonVariants({ variant: 'secondary' })} href={repositoryLink.href} target="_blank" rel="noopener noreferrer">
+              <a
+                className={`${buttonVariants({ variant: 'secondary' })} experience-card-action`}
+                href={repositoryLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Code2 aria-hidden="true" size={18} />
                 {repositoryLink.label}
               </a>
@@ -309,11 +314,20 @@ export function ProjectPage() {
           </div>
         </div>
 
-        {heroCollageImages.length ? (
+        {heroCollageImages.length > 1 ? (
           <ExperienceHeroCollage
             images={heroCollageImages}
             ariaLabel={`${project.title} gallery preview`}
             onOpenImage={openLightbox}
+          />
+        ) : heroCollageImages.length === 1 ? (
+          <ProjectImageFrame
+            image={heroCollageImages[0]}
+            className="project-detail-cover"
+            width={980}
+            height={620}
+            loading="eager"
+            onClick={(event) => openLightbox(heroCollageImages[0], event.currentTarget)}
           />
         ) : (
           <ProjectImageFrame

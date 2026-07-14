@@ -3,7 +3,17 @@ import { Link } from 'react-router-dom'
 import { portfolio } from '@/data/portfolio'
 import { buttonVariants } from '@/components/ui/button-variants'
 
-function ProjectCardImage({ src, alt }: { src: string; alt: string }) {
+function ProjectCardImage({
+  src,
+  alt,
+  objectPosition,
+  objectFit,
+}: {
+  src: string
+  alt: string
+  objectPosition?: string
+  objectFit?: 'cover' | 'contain'
+}) {
   return (
     <div className="project-card-image">
       <img
@@ -12,6 +22,10 @@ function ProjectCardImage({ src, alt }: { src: string; alt: string }) {
         width="720"
         height="450"
         loading="lazy"
+        style={{
+          ...(objectPosition ? { objectPosition } : {}),
+          ...(objectFit ? { objectFit } : {}),
+        }}
         onError={(event) => {
           event.currentTarget.hidden = true
           event.currentTarget.parentElement?.classList.add('is-missing')
@@ -39,7 +53,12 @@ export function ProjectsSection() {
               key={project.slug}
               data-reveal
             >
-              <ProjectCardImage src={project.coverImage.src} alt={project.coverImage.alt} />
+              <ProjectCardImage
+                src={project.coverImage.src}
+                alt={project.coverImage.alt}
+                objectPosition={project.coverImage.objectPosition}
+                objectFit={project.coverImage.objectFit}
+              />
               <div className="project-card-body">
                 <div className="project-card-meta">
                   <span>{project.category}</span>
@@ -53,7 +72,10 @@ export function ProjectsSection() {
                   ))}
                 </div>
                 <div className="project-card-actions">
-                  <Link className={buttonVariants({ variant: 'secondary', size: 'sm' })} to={`/projects/${project.slug}`}>
+                  <Link
+                    className={`${buttonVariants({ variant: 'secondary', size: 'sm' })} experience-card-action`}
+                    to={`/projects/${project.slug}`}
+                  >
                     View Project
                     <ArrowUpRight aria-hidden="true" size={16} />
                   </Link>

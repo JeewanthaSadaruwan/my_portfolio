@@ -4,6 +4,7 @@ export type ProjectCategory =
   | 'Robotics & Autonomous Systems'
   | 'Agentic AI & Full-Stack Development'
   | 'Machine Learning & Sensor Analytics'
+  | 'Embedded Systems & IoT'
   | 'Embedded AI & Assistive Technology'
   | 'Computer Vision & Mobile Robotics'
 
@@ -121,6 +122,15 @@ export interface AchievementItem {
   image?: ProjectImage
 }
 
+export interface LeadershipItem {
+  label: string
+  title: string
+  period: string
+  description: string
+  highlights: string[]
+  image?: ProjectImage
+}
+
 export interface ProjectImage {
   src: string
   alt: string
@@ -128,6 +138,7 @@ export interface ProjectImage {
   id?: string
   type?: 'image'
   objectPosition?: string
+  objectFit?: 'cover' | 'contain'
   width?: number
   height?: number
   gallery?: boolean
@@ -259,7 +270,7 @@ export interface PortfolioData {
   education: EducationItem[]
   certifications: CertificationItem[]
   achievements: AchievementItem[]
-  leadership: AchievementItem[]
+  leadership: LeadershipItem[]
   projects: Project[]
   contact: ContactInfo
 }

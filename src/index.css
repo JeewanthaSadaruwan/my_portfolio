@@ -1072,12 +1072,56 @@ img {
   padding-top: clamp(2rem, 4vw, 3.5rem);
 }
 
-.leadership-placeholder-card {
-  min-height: 13rem;
-  border-style: dashed;
-  background:
-    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 13rem),
-    var(--color-surface);
+.leadership-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.leadership-card {
+  height: 100%;
+}
+
+.leadership-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 76%, var(--color-accent));
+  border-radius: var(--radius-card) var(--radius-card) 0 0;
+  background: var(--color-surface-elevated);
+}
+
+.leadership-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.leadership-highlights {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.leadership-highlights li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.leadership-highlights li::before {
+  position: absolute;
+  top: 0.62em;
+  left: 0;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  content: '';
 }
 
 .education-section {
@@ -3768,6 +3812,10 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .leadership-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .project-card,
   .project-card-featured {
     grid-column: span 1;
@@ -4069,6 +4117,10 @@ img {
   }
 
   .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-grid {
     grid-template-columns: 1fr;
   }
 
