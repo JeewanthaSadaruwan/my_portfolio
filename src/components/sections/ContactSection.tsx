@@ -31,7 +31,6 @@ export function ContactSection() {
     const name = String(formData.get('name') ?? '').trim()
     const email = String(formData.get('email') ?? '').trim()
     const message = String(formData.get('message') ?? '').trim()
-    const honey = String(formData.get('_honey') ?? '').trim()
     const nextErrors: FormErrors = {}
 
     if (!name) nextErrors.name = 'Enter your name.'
@@ -59,32 +58,45 @@ export function ContactSection() {
     setFormMessage('')
 
     try {
+      formData.set('_subject', `Portfolio inquiry from ${name}`)
+      formData.set('_template', 'table')
+      formData.set('_captcha', 'false')
+      formData.set('_replyto', email)
+      formData.set('_url', window.location.href)
+
+      const controller = new AbortController()
+      const timeout = window.setTimeout(() => controller.abort(), 20000)
       const response = await fetch(portfolio.contact.formEndpoint, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
-          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          name,
-          email,
-          message,
-          _honey: honey,
-          _subject: `Portfolio inquiry from ${name}`,
-          _template: 'table',
-        }),
+        body: formData,
+        signal: controller.signal,
       })
+      window.clearTimeout(timeout)
 
-      if (!response.ok) {
-        throw new Error('Message delivery failed')
+      const result = await response.json().catch(() => null) as {
+        success?: boolean | string
+        message?: string
+      } | null
+      const serviceRejected = result?.success === false || result?.success === 'false'
+
+      if (!response.ok || serviceRejected) {
+        throw new Error(result?.message || 'Message delivery failed')
       }
 
       form.reset()
       setFormStatus('success')
       setFormMessage('Message sent successfully. I’ll get back to you soon.')
-    } catch {
+    } catch (error) {
+      const isTimeout = error instanceof DOMException && error.name === 'AbortError'
       setFormStatus('error')
-      setFormMessage('Direct sending is unavailable. Use the email link or try again shortly.')
+      setFormMessage(
+        isTimeout
+          ? 'The email service took too long to respond. Please try again.'
+          : 'The email service could not deliver this message. Please try again or use the email link.',
+      )
     } finally {
       setIsSubmitting(false)
     }
