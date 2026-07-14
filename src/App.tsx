@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import { SiteLayout } from '@/components/layout/SiteLayout'
 import { ScrollToTop } from '@/components/shared/ScrollToTop'
+import { SiteLoader } from '@/components/shared/SiteLoader'
 import { HomePage } from '@/pages/HomePage'
 import { ExperienceGalleryPage } from '@/pages/ExperienceGalleryPage'
 import { ExperiencePage } from '@/pages/ExperiencePage'
@@ -11,6 +12,7 @@ import { ProjectPage } from '@/pages/ProjectPage'
 function App() {
   return (
     <>
+      <SiteLoader />
       <ScrollToTop />
       <Routes>
         <Route element={<SiteLayout />}>
