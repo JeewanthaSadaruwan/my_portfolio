@@ -72,6 +72,8 @@ export function HeroSection() {
                 alt={activeRole.image.alt}
                 width="720"
                 height="828"
+                decoding="async"
+                fetchPriority={activeRoleIndex === 0 ? 'high' : 'auto'}
               />
             ) : (
               <div className="profile-placeholder">

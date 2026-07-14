@@ -19,42 +19,42 @@ export const portfolio: PortfolioData = {
     {
       label: 'Innovator',
       image: {
-        src: '/media/hero-roles/img2.jpeg',
+        src: '/media/hero-roles/img2.webp',
         alt: 'Jeewantha Sadaruwan representing innovation work',
       },
     },
     {
       label: 'AI Enthusiast',
       image: {
-        src: '/media/hero-roles/img3.jpeg',
+        src: '/media/hero-roles/img3.webp',
         alt: 'Jeewantha Sadaruwan representing artificial intelligence interests',
       },
     },
     {
       label: 'Roboticist',
       image: {
-        src: '/media/hero-roles/img6.jpeg',
+        src: '/media/hero-roles/img6.webp',
         alt: 'Jeewantha Sadaruwan representing robotics work',
       },
     },
     {
       label: 'Autonomous Systems Developer',
       image: {
-        src: '/media/hero-roles/img5.jpg',
+        src: '/media/hero-roles/img5.webp',
         alt: 'Jeewantha Sadaruwan representing autonomous systems development',
       },
     },
     {
       label: 'Researcher',
       image: {
-        src: '/media/hero-roles/img4.jpeg',
+        src: '/media/hero-roles/img4.webp',
         alt: 'Jeewantha Sadaruwan representing research work',
       },
     },
     {
       label: 'Agentic AI Developer',
       image: {
-        src: '/media/hero-roles/img1.jpeg',
+        src: '/media/hero-roles/img1.webp',
         alt: 'Jeewantha Sadaruwan representing agentic AI development',
       },
     },
