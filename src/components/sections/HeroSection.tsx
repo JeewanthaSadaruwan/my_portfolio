@@ -46,10 +46,8 @@ export function HeroSection() {
           <div className="hero-actions">
             <a className={buttonVariants({ variant: 'primary' })} href="#projects">
               <ExternalLink aria-hidden="true" size={18} />
-              View My Work
+              Explore Projects
             </a>
-          </div>
-          <div className="hero-secondary-links">
             <a
               className={buttonVariants({ variant: 'secondary' })}
               href={portfolio.resumePath}
@@ -59,7 +57,9 @@ export function HeroSection() {
               <Download aria-hidden="true" size={18} />
               Download Resume
             </a>
-            <SocialLinks links={portfolio.socials} />
+          </div>
+          <div className="hero-social-links">
+            <SocialLinks links={portfolio.socials} compact />
           </div>
         </div>
 

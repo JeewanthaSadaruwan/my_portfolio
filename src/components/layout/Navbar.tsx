@@ -4,7 +4,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { portfolio } from '@/data/portfolio'
 import { useActiveSection } from '@/hooks/useActiveSection'
 import { useTheme } from '@/hooks/useTheme'
-import { buttonVariants } from '@/components/ui/button-variants'
 import { cn } from '@/lib/utils'
 
 const navItems = [
@@ -93,14 +92,6 @@ export function Navbar() {
           >
             {theme === 'dark' ? <Sun aria-hidden="true" size={19} /> : <Moon aria-hidden="true" size={19} />}
           </button>
-          <a
-            className={cn(buttonVariants({ variant: 'secondary', size: 'sm' }), 'resume-link')}
-            href={portfolio.resumePath}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Resume
-          </a>
           <button
             type="button"
             className="icon-button menu-toggle"

@@ -17,13 +17,6 @@ export const portfolio: PortfolioData = {
   ],
   heroRoles: [
     {
-      label: 'Innovator',
-      image: {
-        src: '/media/hero-roles/img2.webp',
-        alt: 'Jeewantha Sadaruwan representing innovation work',
-      },
-    },
-    {
       label: 'AI Enthusiast',
       image: {
         src: '/media/hero-roles/img3.webp',
