@@ -5,6 +5,7 @@ import { ContactSection } from '@/components/sections/ContactSection'
 import { EducationSection } from '@/components/sections/EducationSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
 import { HeroSection } from '@/components/sections/HeroSection'
+import { LeadershipSection } from '@/components/sections/LeadershipSection'
 import { ProjectsSection } from '@/components/sections/ProjectsSection'
 import { SkillsSection } from '@/components/sections/SkillsSection'
 import { useReveal } from '@/hooks/useReveal'
@@ -27,6 +28,7 @@ export function HomePage() {
       <EducationSection />
       <ProjectsSection />
       <AchievementsSection />
+      <LeadershipSection />
       <ContactSection />
     </main>
   )

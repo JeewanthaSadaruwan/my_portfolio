@@ -118,6 +118,7 @@ export interface AchievementItem {
   type: 'Competition' | 'Award' | 'Scholarship' | 'Volunteering' | 'Leadership' | 'Club' | 'Community'
   date: string
   description: string
+  image?: ProjectImage
 }
 
 export interface ProjectImage {
@@ -127,6 +128,10 @@ export interface ProjectImage {
   id?: string
   type?: 'image'
   objectPosition?: string
+  width?: number
+  height?: number
+  gallery?: boolean
+  hero?: boolean
 }
 
 export interface ProjectVideo {
@@ -226,6 +231,8 @@ export interface Project {
 export interface ContactInfo {
   email: string
   emailHref: string
+  phone: string
+  phoneHref: string
   location: string
   availability: string
   formEndpoint?: string

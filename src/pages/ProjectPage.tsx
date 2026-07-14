@@ -1,6 +1,7 @@
-import { ArrowLeft, ChevronLeft, ChevronRight, Code2, ExternalLink, X } from 'lucide-react'
-import { useCallback, useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode } from 'react'
+import { ArrowLeft, ChevronLeft, ChevronRight, Code2, ExternalLink, Images, X } from 'lucide-react'
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type MouseEvent, type ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { ExperienceHeroCollage } from '@/components/experience/ExperienceHeroCollage'
 import { portfolio } from '@/data/portfolio'
 import type { ProjectImage, ProjectMedia, ProjectVideo } from '@/types/portfolio'
 import { buttonVariants } from '@/components/ui/button-variants'
@@ -33,6 +34,9 @@ function ProjectImageFrame({
   children,
 }: ProjectImageFrameProps) {
   const [failed, setFailed] = useState(false)
+  const figureStyle = image.width && image.height
+    ? ({ '--project-media-aspect': `${image.width} / ${image.height}` } as CSSProperties)
+    : undefined
   const content = failed ? (
     <span className="project-media-placeholder" role="img" aria-label={image.alt}>
       <span>Project media unavailable</span>
@@ -52,7 +56,7 @@ function ProjectImageFrame({
 
   if (onClick) {
     return (
-      <figure className={className}>
+      <figure className={className} style={figureStyle}>
         <button className="project-media-button" type="button" onClick={onClick}>
           {content}
         </button>
@@ -65,7 +69,7 @@ function ProjectImageFrame({
   }
 
   return (
-    <figure className={className}>
+    <figure className={className} style={figureStyle}>
       <div className="project-media-static">{content}</div>
       <figcaption>
         {children}
@@ -118,6 +122,10 @@ export function ProjectPage() {
   const imageMedia = useMemo(
     () => project?.media.filter(isProjectImage) ?? [],
     [project],
+  )
+  const heroCollageImages = useMemo(
+    () => imageMedia.filter((image) => image.hero),
+    [imageMedia],
   )
   const mediaById = useMemo(() => {
     const map = new Map<string, ProjectMedia>()
@@ -241,7 +249,7 @@ export function ProjectPage() {
             <ProjectImageFrame
               key={media.id}
               image={media}
-              className="project-detail-media"
+              className={`project-detail-media${media.id === 'system-architecture' ? ' project-detail-media-block-diagram' : ''}`}
               width={980}
               height={620}
               onClick={(event) => openLightbox(media, event.currentTarget)}
@@ -262,7 +270,7 @@ export function ProjectPage() {
         Back to Projects
       </Link>
 
-      <header className="project-detail-hero">
+      <header className="project-detail-hero experience-hero-layout">
         <div className="project-detail-copy">
           <p className="project-detail-kicker">{project.category}</p>
           <h1>{project.title}</h1>
@@ -277,6 +285,15 @@ export function ProjectPage() {
             ))}
           </div>
           <div className="project-detail-actions">
+            <Link
+              className={`${buttonVariants({ variant: 'secondary' })} experience-card-action`}
+              to={`/projects/${project.slug}/gallery`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Gallery
+              <Images aria-hidden="true" size={18} />
+            </Link>
             {repositoryLink ? (
               <a className={buttonVariants({ variant: 'secondary' })} href={repositoryLink.href} target="_blank" rel="noopener noreferrer">
                 <Code2 aria-hidden="true" size={18} />
@@ -292,48 +309,60 @@ export function ProjectPage() {
           </div>
         </div>
 
-        <ProjectImageFrame
-          image={{ ...project.coverImage, id: 'cover' }}
-          className="project-detail-cover"
-          width={980}
-          height={620}
-          loading="eager"
-          onClick={(event) => {
-            const coverImage = imageMedia.find((image) => image.id === 'cover')
-            if (coverImage) {
-              openLightbox(coverImage, event.currentTarget)
-            }
-          }}
-        />
+        {heroCollageImages.length ? (
+          <ExperienceHeroCollage
+            images={heroCollageImages}
+            ariaLabel={`${project.title} gallery preview`}
+            onOpenImage={openLightbox}
+          />
+        ) : (
+          <ProjectImageFrame
+            image={{ ...project.coverImage, id: 'cover' }}
+            className="project-detail-cover"
+            width={980}
+            height={620}
+            loading="eager"
+            onClick={(event) => {
+              const coverImage = imageMedia.find((image) => image.id === 'cover')
+              if (coverImage) {
+                openLightbox(coverImage, event.currentTarget)
+              }
+            }}
+          />
+        )}
       </header>
 
       {project.sections.map((section) => (
-        <section className="project-story-section" key={section.id} aria-labelledby={`${section.id}-heading`}>
-          {section.eyebrow ? <p className="project-detail-kicker">{section.eyebrow}</p> : null}
-          <h2 id={`${section.id}-heading`}>{section.heading}</h2>
-          {section.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-          {section.flow?.length ? (
-            <ol className="project-flow-list" aria-label={`${section.heading} flow`}>
-              {section.flow.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
-          ) : null}
-          {section.bullets?.length ? (
-            <ul className="project-marker-list">
-              {section.bullets.map((bullet) => (
-                <li key={bullet}>{bullet}</li>
-              ))}
-            </ul>
-          ) : null}
+        <section className="project-story-section experience-story-section experience-wide-section" id={section.id} key={section.id} aria-labelledby={`${section.id}-heading`}>
+          <div className="experience-readable">
+            {section.eyebrow ? <p className="project-detail-kicker">{section.eyebrow}</p> : null}
+            <h2 id={`${section.id}-heading`}>{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            {section.flow?.length ? (
+              <ol className="project-flow-list" aria-label={`${section.heading} flow`}>
+                {section.flow.map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ol>
+            ) : null}
+            {section.bullets?.length ? (
+              <ul className="project-marker-list">
+                {section.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
           {renderMedia(section.mediaIds)}
         </section>
       ))}
 
-      <section className="project-story-section" aria-labelledby="project-technologies">
-        <h2 id="project-technologies">Technologies</h2>
+      <section className="project-story-section experience-story-section experience-wide-section" aria-labelledby="project-technologies">
+        <div className="experience-readable">
+          <h2 id="project-technologies">Technologies</h2>
+        </div>
         <ul className="project-tech-list">
           {project.technologies.map((technology) => (
             <li key={technology}>{technology}</li>
@@ -342,8 +371,10 @@ export function ProjectPage() {
       </section>
 
       {project.links.length ? (
-        <section className="project-story-section" aria-labelledby="project-links">
-          <h2 id="project-links">Links and Resources</h2>
+        <section className="project-story-section experience-story-section experience-wide-section" aria-labelledby="project-links">
+          <div className="experience-readable">
+            <h2 id="project-links">Links and Resources</h2>
+          </div>
           <div className="project-resource-list">
             {project.links.map((link) => (
               <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">

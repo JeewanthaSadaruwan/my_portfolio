@@ -1,27 +1,53 @@
+import { useState } from 'react'
 import { portfolio } from '@/data/portfolio'
 import { SectionHeader } from '@/components/shared/SectionHeader'
+import type { ProjectImage } from '@/types/portfolio'
+
+function AchievementImage({ image }: { image: ProjectImage }) {
+  const [failed, setFailed] = useState(false)
+
+  return (
+    <div className="achievement-card-image">
+      {failed ? (
+        <span className="achievement-image-placeholder">Achievement image</span>
+      ) : (
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+          style={{ objectPosition: image.objectPosition }}
+          onError={() => setFailed(true)}
+        />
+      )}
+    </div>
+  )
+}
 
 export function AchievementsSection() {
-  const items = [...portfolio.achievements, ...portfolio.leadership]
+  const items = portfolio.achievements
 
   if (!items.length) {
     return null
   }
 
   return (
-    <section className="section container" aria-labelledby="achievements-title">
+    <section id="achievements" className="section container" aria-labelledby="achievements-title">
       <SectionHeader
-        eyebrow="Leadership"
-        title="Achievements, community, and initiative."
-        description="This section hides automatically if the achievement arrays are empty."
+        eyebrow="Achievements"
+        title="Achievements"
+        description="Competition results and engineering milestones."
+        headingId="achievements-title"
       />
-      <div className="achievement-grid" id="achievements-title">
+      <div className="achievement-grid">
         {items.map((item) => (
           <article className="surface-card achievement-card" key={`${item.title}-${item.type}`} data-reveal>
-            <span>{item.type}</span>
-            <h3>{item.title}</h3>
-            <p className="muted">{item.date}</p>
-            <p>{item.description}</p>
+            {item.image ? <AchievementImage image={item.image} /> : null}
+            <div className="achievement-card-content">
+              <span>{item.type}</span>
+              <h3>{item.title}</h3>
+              <p className="muted">{item.date}</p>
+              <p>{item.description}</p>
+            </div>
           </article>
         ))}
       </div>

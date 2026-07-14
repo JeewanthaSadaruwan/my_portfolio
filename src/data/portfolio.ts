@@ -91,8 +91,8 @@ export const portfolio: PortfolioData = {
   },
   availability: 'Open to AI, robotics, research, and intelligent systems opportunities',
   location: 'Sri Lanka',
-  email: 'sadaruwanijmj.22@uom.lk',
-  emailHref: 'mailto:sadaruwanijmj.22@uom.lk',
+  email: 'jeewansadaruwan987@gmail.com',
+  emailHref: 'mailto:jeewansadaruwan987@gmail.com',
   resumePath: '/resume/jeewantha-sadaruwan-resume.pdf',
   socials: [
     {
@@ -108,7 +108,7 @@ export const portfolio: PortfolioData = {
     {
       platform: 'Email',
       label: 'Email',
-      href: 'mailto:sadaruwanijmj.22@uom.lk',
+      href: 'mailto:jeewansadaruwan987@gmail.com',
     },
   ],
   skills: [
@@ -684,6 +684,10 @@ export const portfolio: PortfolioData = {
       date: 'Oct 2024',
       description:
         'Co-developed a smart organic-waste management system designed to reduce methane emissions from organic waste.',
+      image: {
+        src: '/achievements/ieee-arduino-challenge-2024.webp',
+        alt: 'IEEE Challenge Sphere Arduino Challenge achievement',
+      },
     },
     {
       title: 'First Runner-Up — IEEE AI Challenge',
@@ -691,6 +695,10 @@ export const portfolio: PortfolioData = {
       date: 'Oct 2025',
       description:
         'Developed an AI-enabled Smart Transit Companion for trains, providing real-time guidance and commuter assistance.',
+      image: {
+        src: '/achievements/ieee-ai-challenge.webp',
+        alt: 'IEEE AI Challenge achievement',
+      },
     },
     {
       title: 'First Runner-Up — IEEE Silicon Pulse Competition',
@@ -698,6 +706,10 @@ export const portfolio: PortfolioData = {
       date: 'Feb 2025',
       description:
         'Built a triangular-wave function generator using analog components within a 24-hour competition.',
+      image: {
+        src: '/achievements/ieee-silicon-pulse.webp',
+        alt: 'IEEE Silicon Pulse Competition achievement',
+      },
     },
     {
       title: 'Finalist — IESL Robogames 2024',
@@ -705,6 +717,10 @@ export const portfolio: PortfolioData = {
       date: 'Apr 2025',
       description:
         'Implemented a Webots maze-solving algorithm, built a custom robot, and controlled a Kobuki robot during the final challenge.',
+      image: {
+        src: '/achievements/iesl-robogames-2024.webp',
+        alt: 'IESL Robogames finalist achievement',
+      },
     },
     {
       title: 'Top 10 — ElectroCombat Battle Robot Competition 2024',
@@ -712,45 +728,20 @@ export const portfolio: PortfolioData = {
       date: 'Jul 2024',
       description:
         'Built a battle robot with a vertical spinning weapon and efficient control system, finishing in the top 10 among more than 60 teams.',
-    },
-    {
-      title: 'Mahapola Higher Education Merit Scholarship',
-      type: 'Scholarship',
-      date: 'Awarded',
-      description:
-        'Awarded for outstanding G.C.E. Advanced Level performance and an all-island rank of 166.',
+      image: {
+        src: '/achievements/electrocombat-2024.webp',
+        alt: 'ElectroCombat Battle Robot Competition achievement',
+      },
     },
   ],
-  leadership: [
-    {
-      title: 'Co-Founder — JASPERN Innovations',
-      type: 'Leadership',
-      date: 'Mar 2023 – Present',
-      description:
-        'Co-building a Sri Lankan robotics initiative focused on developing recognition, practical engineering capability, and future automation solutions.',
-    },
-    {
-      title: 'Chairman — Sri Lankan Robotics Challenge 2025/2026',
-      type: 'Leadership',
-      date: 'Jun 2025 – Present',
-      description:
-        'Leading one of Sri Lanka’s major national robotics competitions, including corporate engagement with sponsors and partners.',
-    },
-    {
-      title: 'Event Coordinator — Sri Lankan Robotics Challenge 2024/2025',
-      type: 'Leadership',
-      date: 'Apr 2024',
-      description:
-        'Supported the planning and coordination of national-level robotics competition activities for school and university teams.',
-    },
-  ],
+  leadership: [],
   projects: [
     {
       title: 'Autonomous Mobile Robot Controller for Warehouses',
       slug: 'warehouse-amr',
       category: 'Robotics & Autonomous Systems',
-      dateLabel: 'March 2025 – Present',
-      status: 'Ongoing',
+      dateLabel: '2025',
+      status: 'Completed',
       cardDescription:
         'An autonomous warehouse robot combining microcontroller-based low-level control, Jetson-based high-level autonomy, LiDAR sensing, SLAM, and ROS 2 navigation.',
       heroSummary:
@@ -771,13 +762,14 @@ export const portfolio: PortfolioData = {
       featured: true,
       accent: 'teal',
       coverImage: {
-        src: '/projects/warehouse-amr/cover.webp',
-        alt: 'Autonomous mobile robot prototype for warehouse environments',
-        caption: 'Complete AMR prototype for warehouse automation.',
+        src: '/projects/warehouse-amr/cover.png',
+        alt: 'Autonomous mobile robot navigating a structured indoor warehouse',
+        caption: 'AMR concept showcasing LiDAR-based perception, mapping, and autonomous warehouse navigation.',
       },
       sections: [
         {
           id: 'overview',
+          eyebrow: 'Project overview',
           heading: 'Overview',
           paragraphs: [
             'This project focuses on developing an autonomous mobile robot for warehouse automation. The system separates time-sensitive hardware control from high-level autonomy by using a microcontroller for low-level control and an NVIDIA Jetson Nano B01 for perception, mapping, planning, and navigation.',
@@ -786,22 +778,16 @@ export const portfolio: PortfolioData = {
         },
         {
           id: 'approach',
+          eyebrow: 'System architecture',
           heading: 'System Approach',
           paragraphs: [
             'The architecture separates hardware feedback and real-time control from the higher-level autonomy stack. This makes the robot easier to test, debug, and extend while the project remains ongoing.',
           ],
-          flow: [
-            'Sensors and Motor Feedback',
-            'Microcontroller-Based Low-Level Control',
-            'Jetson Nano B01',
-            'SLAM and Localization',
-            'ROS 2 Navigation',
-            'Warehouse Task Execution',
-          ],
-          mediaIds: ['hardware', 'gazebo-simulation', 'slam-navigation'],
+          mediaIds: ['system-architecture'],
         },
         {
           id: 'contribution',
+          eyebrow: 'Engineering contribution',
           heading: 'My Contribution',
           paragraphs: [],
           bullets: [
@@ -822,30 +808,88 @@ export const portfolio: PortfolioData = {
         {
           id: 'cover',
           type: 'image',
-          src: '/projects/warehouse-amr/cover.webp',
-          alt: 'Autonomous mobile robot prototype for warehouse environments',
-          caption: 'Complete AMR prototype for warehouse automation.',
+          src: '/projects/warehouse-amr/cover.png',
+          alt: 'Autonomous mobile robot navigating a structured indoor warehouse',
+          caption: 'AMR concept showcasing LiDAR-based perception, mapping, and autonomous warehouse navigation.',
+          width: 1672,
+          height: 941,
+          gallery: false,
         },
         {
-          id: 'hardware',
+          id: 'system-architecture',
           type: 'image',
-          src: '/projects/warehouse-amr/hardware.webp',
-          alt: 'Hardware and electronics layout for the warehouse AMR',
-          caption: 'Hardware and electronics layout for sensing and control.',
+          src: '/projects/warehouse-amr/AMR_Hardware_Block_Diagram.jpg',
+          alt: 'Block diagram of the autonomous warehouse robot architecture',
+          caption: 'System block diagram connecting sensors, low-level control, Jetson autonomy, SLAM, and ROS 2 navigation.',
+          width: 1138,
+          height: 1372,
+          gallery: false,
         },
         {
-          id: 'gazebo-simulation',
+          id: 'amr-gallery-1',
           type: 'image',
-          src: '/projects/warehouse-amr/gazebo-simulation.webp',
-          alt: 'Gazebo warehouse simulation for the autonomous mobile robot',
-          caption: 'Warehouse simulation environment in Gazebo.',
+          src: '/projects/warehouse-amr/img1.JPG',
+          alt: 'Autonomous mobile robot project photograph 1',
+          caption: 'Warehouse AMR development and integration.',
+          width: 3120,
+          height: 4160,
+          gallery: true,
+          hero: true,
         },
         {
-          id: 'slam-navigation',
+          id: 'amr-gallery-2',
           type: 'image',
-          src: '/projects/warehouse-amr/slam-navigation.webp',
-          alt: 'SLAM map or navigation visualization for the warehouse AMR',
-          caption: 'SLAM and navigation visualization for warehouse autonomy.',
+          src: '/projects/warehouse-amr/img2.JPG',
+          alt: 'Autonomous mobile robot project photograph 2',
+          caption: 'Warehouse AMR development and integration.',
+          width: 4160,
+          height: 3120,
+          gallery: true,
+          hero: true,
+        },
+        {
+          id: 'amr-gallery-3',
+          type: 'image',
+          src: '/projects/warehouse-amr/img3.jpg',
+          alt: 'Autonomous mobile robot project photograph 3',
+          caption: 'Warehouse AMR development and integration.',
+          width: 4032,
+          height: 3024,
+          gallery: true,
+          hero: true,
+        },
+        {
+          id: 'amr-gallery-4',
+          type: 'image',
+          src: '/projects/warehouse-amr/img4.JPG',
+          alt: 'Autonomous mobile robot project photograph 4',
+          caption: 'Warehouse AMR development and integration.',
+          width: 3120,
+          height: 4160,
+          gallery: true,
+          hero: true,
+        },
+        {
+          id: 'amr-gallery-5',
+          type: 'image',
+          src: '/projects/warehouse-amr/img5.jpg',
+          alt: 'Autonomous mobile robot project photograph 5',
+          caption: 'Warehouse AMR development and integration.',
+          width: 2222,
+          height: 1687,
+          gallery: true,
+          hero: true,
+        },
+        {
+          id: 'amr-gallery-6',
+          type: 'image',
+          src: '/projects/warehouse-amr/img6.JPG',
+          alt: 'Autonomous mobile robot project photograph 6',
+          caption: 'Warehouse AMR development and integration.',
+          width: 3024,
+          height: 4032,
+          gallery: true,
+          hero: true,
         },
       ],
       links: [],
@@ -1277,11 +1321,13 @@ export const portfolio: PortfolioData = {
     },
   ],
   contact: {
-    email: 'sadaruwanijmj.22@uom.lk',
-    emailHref: 'mailto:sadaruwanijmj.22@uom.lk',
+    email: 'jeewansadaruwan987@gmail.com',
+    emailHref: 'mailto:jeewansadaruwan987@gmail.com',
+    phone: '+94 78 125 5494',
+    phoneHref: 'tel:+94781255494',
     location: 'Sri Lanka',
     availability:
-      'Open to robotics, autonomous systems, AI research, and collaborative engineering projects',
-    formEndpoint: undefined,
+      'Open to freelance opportunities, part-time roles, and collaborations in Embodied AI, agentic AI, robotics, and intelligent systems.',
+    formEndpoint: 'https://formsubmit.co/ajax/jeewansadaruwan987@gmail.com',
   },
 }

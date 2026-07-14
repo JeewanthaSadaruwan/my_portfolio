@@ -1,18 +1,25 @@
 import type { CSSProperties } from 'react'
 import { useEffect, useState } from 'react'
-import type { ExperienceMediaImage } from '@/types/portfolio'
-
-interface CollageImage extends ExperienceMediaImage {
+export interface HeroCollageImage {
+  id: string
+  src: string
+  alt: string
+  caption?: string
   width?: number
   height?: number
 }
 
-interface ExperienceHeroCollageProps {
-  images: CollageImage[]
-  onOpenImage: (image: ExperienceMediaImage, trigger: HTMLButtonElement) => void
+interface ExperienceHeroCollageProps<T extends HeroCollageImage> {
+  images: T[]
+  onOpenImage: (image: T, trigger: HTMLButtonElement) => void
+  ariaLabel?: string
 }
 
-export function ExperienceHeroCollage({ images, onOpenImage }: ExperienceHeroCollageProps) {
+export function ExperienceHeroCollage<T extends HeroCollageImage>({
+  images,
+  onOpenImage,
+  ariaLabel = 'Selected project media',
+}: ExperienceHeroCollageProps<T>) {
   const [activeImageIndex, setActiveImageIndex] = useState(0)
 
   useEffect(() => {
@@ -35,10 +42,10 @@ export function ExperienceHeroCollage({ images, onOpenImage }: ExperienceHeroCol
     images[activeImageIndex],
     images[(activeImageIndex + 1) % images.length],
     images[(activeImageIndex + 2) % images.length],
-  ].filter((image): image is ExperienceMediaImage => Boolean(image))
+  ].filter((image): image is T => Boolean(image))
 
   return (
-    <div className="experience-hero-collage" aria-label="Selected WSO2 internship media">
+    <div className="experience-hero-collage" aria-label={ariaLabel}>
       {visibleImages.slice(0, 3).map((image, index) => (
         <button
           className={`experience-collage-card experience-collage-card-${index + 1}`}
@@ -49,7 +56,7 @@ export function ExperienceHeroCollage({ images, onOpenImage }: ExperienceHeroCol
             '--collage-aspect': image.width && image.height ? `${image.width} / ${image.height}` : '16 / 10.6',
           } as CSSProperties}
           onClick={(event) => onOpenImage(image, event.currentTarget)}
-          aria-label={`View image: ${image.caption}`}
+          aria-label={`View image: ${image.caption ?? image.alt}`}
         >
           <img
             src={image.src}
