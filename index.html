@@ -2,6 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <script>
+      ;(() => {
+        const storageKey = 'portfolio-theme'
+        let savedTheme = null
+
+        try {
+          savedTheme = window.localStorage.getItem(storageKey)
+        } catch {
+          // Storage can be unavailable in privacy-restricted browsing contexts.
+        }
+
+        const theme = savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark'
+        const root = document.documentElement
+
+        root.dataset.theme = theme
+        root.classList.toggle('dark', theme === 'dark')
+        root.style.colorScheme = theme
+      })()
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jeewantha Sadaruwan</title>

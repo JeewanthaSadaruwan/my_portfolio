@@ -9,12 +9,18 @@ function getPreferredTheme(): Theme {
     return 'dark'
   }
 
-  const storedTheme = window.localStorage.getItem(storageKey)
+  let storedTheme: string | null
+
+  try {
+    storedTheme = window.localStorage.getItem(storageKey)
+  } catch {
+    return 'dark'
+  }
   if (storedTheme === 'light' || storedTheme === 'dark') {
     return storedTheme
   }
 
-  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+  return 'dark'
 }
 
 export function useTheme() {
@@ -24,7 +30,11 @@ export function useTheme() {
     const root = window.document.documentElement
     root.dataset.theme = theme
     root.classList.toggle('dark', theme === 'dark')
-    window.localStorage.setItem(storageKey, theme)
+    try {
+      window.localStorage.setItem(storageKey, theme)
+    } catch {
+      // Keep the selected theme active even when storage is unavailable.
+    }
   }, [theme])
 
   return {

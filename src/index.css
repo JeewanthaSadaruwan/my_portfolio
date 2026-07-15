@@ -60,12 +60,14 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 92px;
+  background-color: #0b111d;
 }
 
 body {
   min-width: 320px;
   margin: 0;
   overflow-x: hidden;
+  background-color: #0b111d;
   background:
     radial-gradient(circle at top left, color-mix(in srgb, var(--color-accent) 18%, transparent), transparent 28rem),
     radial-gradient(circle at 78% 8%, color-mix(in srgb, var(--color-secondary) 14%, transparent), transparent 24rem),
@@ -77,6 +79,10 @@ body {
   background: var(--light-page-background);
   background-attachment: fixed;
   background-size: cover;
+}
+
+:root[data-theme="light"] {
+  background-color: #f7f9fc;
 }
 
 a {
