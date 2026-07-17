@@ -9,7 +9,7 @@ export function Footer() {
         <span>© {getCurrentYear()} {portfolio.name}.</span>
         <a href="#top" className="back-top">
           <ArrowUp aria-hidden="true" size={16} />
-          Back to top
+          Return to top
         </a>
       </div>
     </footer>
