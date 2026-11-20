@@ -443,11 +443,11 @@ export const portfolio: PortfolioData = {
         },
         {
           label: 'SLAM Demonstration',
-          href: 'https://drive.google.com/file/d/1EEVsXk2TEE8i5LiguUBYnf9VosTrAj9s/view?usp=sharing',
+          href: 'https://drive.google.com/file/d/1VCMSmNN4gFzJZ32Z8hcjde6htkzM32hb/view?usp=sharing',
         },
         {
           label: 'Robotic Arm Demonstration',
-          href: 'https://drive.google.com/file/d/16fRzYCPWkogHTC1uZi42zMRHRKKKSSDg/view?usp=sharing',
+          href: 'https://drive.google.com/file/d/1eFBD0btZG6fZdV1mYK8gDsn76tVPv6Rf/view?usp=sharing',
         },
       ],
       confidentialityNote:
@@ -568,8 +568,8 @@ export const portfolio: PortfolioData = {
           title: 'Unitree Go2 SLAM & Navigation Demonstration',
           caption:
             'Demonstration of indoor mapping, localization, path planning, and goal-based autonomous navigation using the Unitree Go2.',
-          embedUrl: 'https://drive.google.com/file/d/1EEVsXk2TEE8i5LiguUBYnf9VosTrAj9s/preview',
-          externalUrl: 'https://drive.google.com/file/d/1EEVsXk2TEE8i5LiguUBYnf9VosTrAj9s/view?usp=sharing',
+          embedUrl: 'https://drive.google.com/file/d/1VCMSmNN4gFzJZ32Z8hcjde6htkzM32hb/preview',
+          externalUrl: 'https://drive.google.com/file/d/1VCMSmNN4gFzJZ32Z8hcjde6htkzM32hb/view?usp=sharing',
           poster: '/media/experience/wso2/slam-video-poster.webp',
         },
         {
@@ -578,8 +578,8 @@ export const portfolio: PortfolioData = {
           title: 'D1-T Robotic Arm Pick-and-Place Demonstration',
           caption:
             'Demonstration of robotic-arm control, pick-and-place execution, and inverse-kinematics testing.',
-          embedUrl: 'https://drive.google.com/file/d/16fRzYCPWkogHTC1uZi42zMRHRKKKSSDg/preview',
-          externalUrl: 'https://drive.google.com/file/d/16fRzYCPWkogHTC1uZi42zMRHRKKKSSDg/view?usp=sharing',
+          embedUrl: 'https://drive.google.com/file/d/1eFBD0btZG6fZdV1mYK8gDsn76tVPv6Rf/preview',
+          externalUrl: 'https://drive.google.com/file/d/1eFBD0btZG6fZdV1mYK8gDsn76tVPv6Rf/view?usp=sharing',
           poster: '/media/experience/wso2/arm-video-poster.webp',
         },
       ],
